@@ -217,6 +217,7 @@ input{
 	border: none;
 	outline: none;
 	border-radius: 5px;
+ 
 }
 button{
 	width: 60%;
@@ -225,7 +226,7 @@ button{
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #573b8a;
+	background: #d16602;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -236,7 +237,7 @@ button{
 	cursor: pointer;
 }
 button:hover{
-	background: #6d44b8;
+	background: #444cb8;
 }
 .login{
 	height: 460px;
@@ -246,7 +247,7 @@ button:hover{
 	transition: .8s ease-in-out;
 }
 .login label{
-	color: #573b8a;
+	color: #d16602;
 	transform: scale(.6);
 }
 
