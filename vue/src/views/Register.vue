@@ -39,6 +39,7 @@ export default {
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',
     };
+    
   },
   methods: {
     register() {
