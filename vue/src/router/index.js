@@ -4,7 +4,10 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
+import Volunteer from '../views/Volunteer.vue'
+import Support from '../views/Support.vue'
 import store from '../store/index'
+
 
 Vue.use(Router)
 
@@ -49,6 +52,22 @@ const router = new Router({
       path: "/register",
       name: "register",
       component: Register,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/volunteer",
+      name: "volunteer",
+      component: Volunteer,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/support",
+      name: "support",
+      component: Support,
       meta: {
         requiresAuth: false
       }
