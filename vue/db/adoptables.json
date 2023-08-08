@@ -1,0 +1,292 @@
+{
+    "pets":[
+        {
+            "name": "Priscilla",
+            "species": "cat",
+            "sex": "F",
+            "age": "3 years",
+            "spayedNeutered": "yes",
+            "description": "Priscilla is much too dignified to sit on laps.",
+            "picture": "../public/img/cats/cat_1.png"
+        },
+        {
+            "name": "Tiger",
+            "species": "cat",
+            "sex": "F",
+            "age": "8 months",
+            "spayedNeutered": "yes",
+            "description": "Tiger likes to tug on shoelaces and heart strings.",
+            "picture": "../public/img/cats/cat_2.jpg"
+        },
+        {
+            "name": "Bruce",
+            "species": "cat",
+            "sex": "M",
+            "age": "4 months",
+            "spayedNeutered": "no",
+            "description": "Bruce loves his flower necklace and will fight you if you try to take it away.",
+            "picture": "../public/img/cats/cat_3.jpg"
+        },
+        {
+            "name": "Simba",
+            "species": "cat",
+            "sex": "M",
+            "age": "1 year",
+            "spayedNeutered": "yes",
+            "description": "Simba prowls. Simba hunts. Simba trips you at the top of the stairs.",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        },
+        {
+            "name": "",
+            "species": "",
+            "sex": "",
+            "age": "",
+            "spayedNeutered": "",
+            "description": "",
+            "picture": ""
+        }
+    ]
+}
