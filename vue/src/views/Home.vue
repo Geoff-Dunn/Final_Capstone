@@ -6,10 +6,21 @@
 	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
-<!-- <h1 class="main-title">Simple image overlay hover effects</h1> -->
+
 <h3 class="title">Cats for Adoption</h3>
-<div class="container">
+<div class="container">  
   
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\cats\cat_1.png">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">Priscilla</h3>
+        <p class="content-text">Priscilla is much too dignified to sit on laps.</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
   
   <div class="content">
     <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
@@ -21,29 +32,15 @@
       </div>
     <!-- </a> -->
   </div>
-<!-- </div>
 
-<div class="container"> -->
-  <!-- <h3 class="title">Text fadeIn bottom</h3> -->
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\cats\cat_1.png">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <!-- <h3 class="title">Text fadeIn bottom</h3> -->
+  
   <div class="content">
     <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\cats\cat_3.jpg">
       <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
+        <h3 class="content-title">Bruce</h3>
+        <p class="content-text">Bruce loves his flower necklace and will fight you if you try to take it away.</p>
       </div>
     <!-- </a> -->
   </div>
@@ -97,6 +94,196 @@
     <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\cats\cat_8.webp">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+</div>
+
+<h3 class="title">Rabbits for Adoption</h3>
+<div class="container">  
+  
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\Bunny\Bunny_1.png">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\Bunny\Bunny_2.jpg">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\Bunny\Bunny_3.jpg">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\Bunny\Bunny_4.jpg">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\Bunny\Bunny_5.png">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\Bunny\Bunny_6.png">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\Bunny\Bunny_7.png">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  <!-- <h3 class="title">Text fadeIn bottom</h3> -->
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\Bunny\Bunny_8.png">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+</div>
+
+<h3 class="title">Dogs for Adoption</h3>
+<div class="container">  
+  
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\dogs\dog_1.jpg">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\dogs\dog_2.webp">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\dogs\dog_3.jpg">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\dogs\dog_4.jpg">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\dogs\dog_5.webp">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\dogs\dog_6.webp">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\dogs\dog_7.webp">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">This is a title</h3>
+        <p class="content-text">This is a short description</p>
+      </div>
+    <!-- </a> -->
+  </div>
+
+  <!-- <h3 class="title">Text fadeIn bottom</h3> -->
+  <div class="content">
+    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="..\public\img\dogs\dog_8.jpg">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
