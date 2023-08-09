@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
-
+<h2 class="adoptiontitle">Paw Prints Pet Rescue </h2>
 <h3 class="title">Cats for Adoption</h3>
 <div class="container">  
   
@@ -316,6 +316,9 @@ export default {
   border-radius:40px;
 
 }
+div.main {
+  
+}
 .container {
   display:flex;
   flex-direction: row;
@@ -334,6 +337,11 @@ h1 {
   color: white;
   text-align: center;
   font-size: 40px;
+}
+.adoptiontitle {
+  color: white;
+  text-align: center;
+  font-size: 60px;
 }
 p {
   color: white;
