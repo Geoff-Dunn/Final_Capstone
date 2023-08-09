@@ -1,13 +1,6 @@
 <template>
   <div id="volunteer">
     <form @submit.prevent="volunteer">
-      <!-- <h1 >Please Sign In</h1> -->
-      <!-- <div role="alert" v-if="invalidCredentials">
-        Invalid username and password!
-      </div>
-      <div role="alert" v-if="this.$route.query.registration">
-        Thank you for registering, please sign in.
-      </div> -->
 
     <head>
 	<title>Slide Navbar</title>
@@ -16,18 +9,7 @@
 </head>
 <body>
 	<div class="main">  	
-		<!-- <input type="checkbox" id="chk" aria-hidden="true"> -->
-
 			<div class="volunteerform">
-        <!-- <div class="form-input-group">
-				<form>
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" required="">
-					
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Sign up</button>
-				</form>
-        </div> -->
 			
       <div id="form" class="text-center">
     <form @submit.prevent="volunteer">
@@ -55,25 +37,12 @@
       
         <input type="email" id="email" v-model="newVolunteer.email" placeholder="Email" required />
       </div>
-      <button type="submit">Submit</button>
-      <!-- <p><router-link :to="{ name: 'login' }">Already have an account? Log in.</router-link></p> -->
+      <button type="submit">Submit</button> 
     </form>
   </div>
       
       
       </div>
-<!-- 
-			<div class="login">
-        <div class="form-input-group">
-				<form>
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="text" name="text" id="username" placeholder="Username" v-model="user.username" required="">
-					<input type="password" name="password" id="password" placeholder="Password" v-model="user.password" required="">
-          </form>
-      <button type="submit">Sign in</button>
-      <router-link :to="{ name: 'register' }">Need an account? Sign up.</router-link></p> -->
-        <!-- </div> -->
-			<!-- </div> --> -->
 	</div>
 </body>
 
