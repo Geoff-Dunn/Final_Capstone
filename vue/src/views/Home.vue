@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Paw Prints Pet Rescue</h1>
+    <!-- <h1>Paw Prints Pet Rescue</h1> -->
     <head>
 	<title>Slide Navbar</title>
 	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
@@ -313,12 +313,16 @@ export default {
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  border-radius:40px;
+
 }
 .container {
   display:flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-right:80px;
+  margin-left:80px;
 }
 h1 {
   color: white;
@@ -354,8 +358,11 @@ p {
   position: relative;
   width: 90%;
   max-width: 400px;
-  margin: auto;
+  /* margin: auto; */
+  margin-top: 20px;
   overflow: hidden;
+  border-radius: 20px;
+	box-shadow: 2.5px 10px 25px #000
 }
 
 .content .content-overlay {
@@ -378,7 +385,7 @@ p {
 }
 
 .content-image{
-  /* width: 100%; */
+  width: 100%;
   height: 400px;
 }
 
