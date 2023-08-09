@@ -6,10 +6,13 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import com.techelevator.model.VolunteerDto;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JdbcVolunteerDao implements VolunteerDao {
 
     private final JdbcTemplate jdbcTemplate;
@@ -18,7 +21,7 @@ public class JdbcVolunteerDao implements VolunteerDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public Volunteer newVolunteer(Volunteer volunteer) {
+    public Volunteer createVolunteer(VolunteerDto volunteer) {
         Volunteer volunteerSignup =  null;
         String sql = "INSERT INTO volunteersignup (name, age, phone_number, address, email, isActive VALUES (?,?,?,?,?) RETURNING volunteer_id;";
         try {
@@ -50,6 +53,13 @@ public class JdbcVolunteerDao implements VolunteerDao {
     public Volunteer getVolunteerById(int id) {
         return null;
     }
+
+    @Override
+    public List<Volunteer> getVolunteers() {
+        return null;
+    }
+
+
 
 
     private Volunteer mapRowtoVolunteer(SqlRowSet rs) {

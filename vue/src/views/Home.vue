@@ -316,6 +316,9 @@ export default {
   border-radius:40px;
 
 }
+div.main {
+  
+}
 .container {
   display:flex;
   flex-direction: row;
