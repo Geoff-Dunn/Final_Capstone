@@ -7,10 +7,10 @@ public class Pets {
     private int age;
     private boolean isSpayedNeutered;
     private String description;
-    private boolean picture;
-    private boolean adopted;
+    private String picture;
+    private boolean isAdopted;
 
-    public Pets(String petName, String species, String sex, int age, boolean isSpayedNeutered, String description, boolean picture, boolean adopted) {
+    public Pets(String petName, String species, String sex, int age, boolean isSpayedNeutered, String description, String picture, boolean isAdopted) {
         this.petName = petName;
         this.species = species;
         this.sex = sex;
@@ -18,7 +18,7 @@ public class Pets {
         this.isSpayedNeutered = isSpayedNeutered;
         this.description = description;
         this.picture = picture;
-        this.adopted= adopted;
+        this.isAdopted= isAdopted;
     }
-    
+
 }
