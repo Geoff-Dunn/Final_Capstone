@@ -3,10 +3,10 @@
   <div id="app">
     <div id="nav">
       
-      <router-link class="navlink" v-bind:to="{ name: 'home' }">|  Home</router-link>&nbsp;|&nbsp;
-      <router-link class="navlink" v-if="$store.state.token === ''" to="/login">Login/Register  |  </router-link>
-      <router-link class="navlink" v-bind:to="{ name: 'volunteer' }">Volunteer</router-link>&nbsp;|&nbsp;
-      <router-link class="navlink" v-bind:to="{ name: 'support' }">Support</router-link>&nbsp;|&nbsp;
+      <router-link class="navlink" v-bind:to="{ name: 'home' }">  Home</router-link>
+      <router-link class="navlink" v-if="$store.state.token === ''" to="/login">Login/Register</router-link>
+      <router-link class="navlink" v-bind:to="{ name: 'volunteer' }">Volunteer</router-link>
+      <router-link class="navlink" v-bind:to="{ name: 'support' }">Support</router-link>
       <router-link class="navlink" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
     </div>
     <div id="banner">
@@ -25,6 +25,7 @@
   color: white;
   display:flex;
   justify-content: center;
+  column-gap: 30px;
   padding: 15px;
 	background: linear-gradient(to right, #d16602, #9c4c01, #d16602);
   
@@ -43,5 +44,9 @@
     width: 75vh;
     /* height: 50vh; */
   }
+#nav > a {
+  display: flex;
+  justify-content: space-between;
+}
   
 </style>
