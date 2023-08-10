@@ -46,7 +46,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import volunteerService from "../services/VolunteerService";
 
 export default {
@@ -76,7 +75,6 @@ export default {
     submitForm() {
       volunteerService
         .volunteerSubmission(this.newVolunteer)
-        axios.post('/volunteer', this.newVolunteer)
         .then(response => {
           if (response.status == 201) {
             
