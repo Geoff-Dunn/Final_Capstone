@@ -32,6 +32,6 @@ CREATE TABLE volunteersignup (
 	address varchar (50) NOT NULL,
 	email varchar (50) NOT NULL,
 	is_active boolean
-);
+	);
 
 COMMIT TRANSACTION;
