@@ -8,9 +8,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import com.techelevator.model.VolunteerDto;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.ArrayList;
 import java.util.List;
+@CrossOrigin
 
 @Component
 public class JdbcVolunteerDao implements VolunteerDao {
@@ -36,7 +38,7 @@ public class JdbcVolunteerDao implements VolunteerDao {
     }
     public List<Volunteer> getVolunteers(boolean is_active) {
         List<Volunteer> volunteers = new ArrayList<>();
-        String sql = "SELECT name, age, phone_number, address, email, isActive FROM volunteersignup WHERE is_active = ?;";
+        String sql = "SELECT name, age, phone_number, address, email, is_active FROM volunteersignup WHERE is_active = ?;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, is_active);
             while (results.next()) {
