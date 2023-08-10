@@ -14,7 +14,7 @@ CREATE TABLE users (
 
 CREATE TABLE pets (
 	pet_id SERIAL,
-	pet_name varchar(50) NOT NULL UNIQUE,
+	pet_name varchar(50) NOT NULL,
 	species varchar (10) NOT NULL,
 	sex varchar (10) NOT NULL,
 	age varchar (20) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE pets (
 );
 CREATE TABLE volunteersignup (
     volunteer_id SERIAL,
-    name varchar (50) NOT NULL UNIQUE,
+    name varchar (50) NOT NULL,
     age integer NOT NULL,
     phone_number varchar (20) NOT NULL,
     address varchar (50) NOT NULL,

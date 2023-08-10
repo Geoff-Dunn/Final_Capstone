@@ -38,9 +38,9 @@ public class VolunteerController {
     }
 
 
-    @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
-    public List<Volunteer> getVolunteers() {
-        List<Volunteer> volunteers = VolunteerDao.getVolunteers();
-        return volunteers;
-    }
+//    @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
+//    public List<Volunteer> getVolunteers() {
+//        List<Volunteer> volunteers = VolunteerDao.getVolunteers();
+//        return volunteers;
+//    }
 }

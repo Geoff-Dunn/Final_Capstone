@@ -30,7 +30,6 @@
         <input type="text" id="address" v-model="newVolunteer.address" placeholder="Address" required />
       </div>
       <div class="form-input-group">
-
         <input type="email" id="email" v-model="newVolunteer.email" placeholder="Email" required />
       </div>
       <button type="submit" >Submit</button> 
@@ -45,10 +44,6 @@
 
     </form>
   </div>
-
-
-
-
 
 </template>
 
