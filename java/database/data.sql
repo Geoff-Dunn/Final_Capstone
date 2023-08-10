@@ -34,3 +34,9 @@ INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, pic
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Freddie', 'dog', 'male', '7 months', 'true', 'Freddie would much rather have the name Gizmo, but we liked Freddie.', '..\public\img\dogs\dog_8.jpg', 'false');
 
 COMMIT TRANSACTION;
+
+BEGIN TRANSACTION;
+INSERT INTO volunteersignup (name, age, phone_number, address, email, is_active) 
+VALUES ('Dan', 29, '4405396774', '1234 Madeup Way', 'notmyemail@gmail.com', 'true');
+
+COMMIT TRANSACTION;

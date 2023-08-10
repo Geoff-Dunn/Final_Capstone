@@ -5,9 +5,9 @@
     <div id="nav">
         <img id="paws" src="..\public\pawprintswhite.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <router-link class="navlink" v-bind:to="{ name: 'home' }">Adopt</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-      <router-link class="navlink" v-if="$store.state.token === ''" to="/login">Login/Register</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
       <router-link class="navlink" v-bind:to="{ name: 'volunteer' }">Volunteer</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
       <router-link class="navlink" v-bind:to="{ name: 'support' }">Support</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+      <router-link class="navlink" v-if="$store.state.token === ''" to="/login">Login/Register</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
       <router-link class="navlink" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <img id="paws" src="..\public\pawprintswhitemirror.png">
     </div>
@@ -37,15 +37,19 @@
 	background: linear-gradient(to right, #d16602, #9c4c01, #d16602);
   box-shadow: 2.5px 10px 25px #000;
   border-radius: 10px; 
-  height:35px;
+  height:33px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 
 
 #banner {
   display:flex;
+  color:rgba(255, 255, 255, 0);
   justify-content: center;
-  box-shadow: 5px 20px 50px #000;
+  justify-content: space-between;
+
+  /* box-shadow: 5px 20px 50px #000; */
   margin-bottom: 10px;
   margin-top: 10px;
   }

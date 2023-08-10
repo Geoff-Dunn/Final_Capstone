@@ -28,6 +28,14 @@ export default new Vuex.Store({
       age: '',
       spayedNeutered: '',
       description: ''
+    },
+    volunteersignup: {
+      name: '',
+      age: '',
+      phoneNumber: '',
+      address: '',
+      email: '',
+      isActive: false
     }
   },
   mutations: {
