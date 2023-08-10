@@ -1,6 +1,6 @@
 <template>
   <div id="volunteer">
-    <form @submit.prevent="volunteer">
+    <form @submit.prevent="volunteerSubmit">
 
     <head>
 	<title>Slide Navbar</title>
@@ -53,11 +53,10 @@
 </template>
 
 <script>
-import axios from 'axios';
-import authService from "../services/AuthService";
+import volunteerService from "../services/VolunteerService";
 
 export default {
-  name: "login",
+  name: "volunteer",
   components: {},
   
   data() {
@@ -80,9 +79,9 @@ export default {
     
   },
   methods: {
-    login() {
-      authService
-        .login(this.user)
+    volunteerSubmit() {
+      volunteerService
+        .volunteerSubmission(this.user)
         .then(response => {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
@@ -97,30 +96,6 @@ export default {
             this.invalidCredentials = true;
           }
         });
-    },
-    register() {
-      if (this.newUser.password != this.newUser.confirmPassword) {
-        this.registrationErrors = true;
-        this.registrationErrorMsg = 'Password & Confirm Password do not match.';
-      } else {
-        authService
-          .register(this.newUser)
-          .then((response) => {
-            if (response.status == 201) {
-              this.$router.push({
-                path: '/login',
-                query: { registration: 'success' },
-              });
-            }
-          })
-          .catch((error) => {
-            const response = error.response;
-            this.registrationErrors = true;
-            if (response.status === 400) {
-              this.registrationErrorMsg = 'Bad Request: Validation Errors';
-            }
-          });
-      }
     },
     clearErrors() {
       this.registrationErrors = false;
