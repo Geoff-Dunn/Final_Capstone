@@ -1,10 +1,13 @@
 import axios from "axios";
 
+const http = axios.create({
+  baseURL: "http://localhost:9000"
+});
+
 export default {
 
     volunteerSubmission(user) {
-      return axios.post('/volunteer', user)
+      return http.post('/volunteer', user)
     },
-
-  
+    
   }

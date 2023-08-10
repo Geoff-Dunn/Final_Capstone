@@ -1,18 +1,16 @@
 <template>
   <div id="volunteer">
-    <form v-on:submit.prevent="volunteerSubmit">
-
     <head>
 	<title>Slide Navbar</title>
-	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="slide navbar style.css"> -->
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="main">  	
 			<div class="volunteerform">
-			
       <div id="form" class="text-center">
-    <form v-on:submit.prevent="submitForm">
+      <form @submit.prevent="submitForm">
+        
       <label for="chk" aria-hidden="true">Volunteer Signup</label>
       <div role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
@@ -42,7 +40,7 @@
 </body>
 
 
-    </form>
+    
   </div>
 
 </template>
@@ -69,7 +67,7 @@ export default {
 
 
       registrationErrors: false,
-      registrationErrorMsg: 'The form could not be sumbitted.',
+      registrationErrorMsg: 'The form could not be submitted.',
       invalidCredentials: false
     };
     
@@ -80,12 +78,15 @@ export default {
         .volunteerSubmission(this.newVolunteer)
         axios.post('/volunteer', this.newVolunteer)
         .then(response => {
-          if (response.status == 200) {
+          if (response.status == 201) {
+            
+
+        
 
             
-            this.$store.commit("SET_AUTH_TOKEN", response.data.token);
-            this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/");
+            // this.$store.commit("SET_AUTH_TOKEN", response.data.token);
+            // this.$store.commit("SET_USER", response.data.user);
+            // this.$router.push("/");
           }
         })
         .catch(error => {

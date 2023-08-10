@@ -15,12 +15,13 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class VolunteerController {
     private JdbcVolunteerDao VolunteerDao;
     public  VolunteerController(JdbcVolunteerDao dao) {
         this.VolunteerDao = dao;
     }
-
+    @CrossOrigin
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value ="/volunteer", method= RequestMethod.POST)
     public Volunteer volunteerSignup(@Valid @RequestBody VolunteerDto newVolunteer) {
@@ -37,10 +38,10 @@ public class VolunteerController {
 
     }
 
-
-//    @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
-//    public List<Volunteer> getVolunteers() {
-//        List<Volunteer> volunteers = VolunteerDao.getVolunteers();
-//        return volunteers;
-//    }
+    @CrossOrigin
+    @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
+    public List<Volunteer> getVolunteers() {
+        List<Volunteer> volunteers = VolunteerDao.getVolunteers();
+        return volunteers;
+    }
 }
