@@ -24,16 +24,17 @@ public class VolunteerController {
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value ="/volunteer", method= RequestMethod.POST)
     public Volunteer volunteerSignup(@Valid @RequestBody VolunteerDto newVolunteer) {
-        Volunteer volunteer;
+//        Volunteer volunteer;
         try {
-            volunteer = VolunteerDao.createVolunteer(newVolunteer);
-            if (volunteer == null) {
-                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Volunteer registration failed!");
-            }
+            Volunteer volunteer = VolunteerDao.createVolunteer(newVolunteer);
+//            if (volunteer == null) {
+//                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Volunteer registration failed!");
+//            }
+            return volunteer;
         } catch (DaoException e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Volunteer registration failed!");
         }
-        return volunteer;
+
     }
 
 

@@ -165,9 +165,9 @@ export default {
 label {
   margin-right: 0.5rem;
 }
-.#form > form {
+/* .#form > form {
   margin:0;
-}
+} */
 
 
 /* ///// */

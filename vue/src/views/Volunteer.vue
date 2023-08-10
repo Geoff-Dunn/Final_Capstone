@@ -1,6 +1,6 @@
 <template>
   <div id="volunteer">
-    <form @submit.prevent="volunteerSubmit">
+    <form v-on:submit.prevent="volunteerSubmit">
 
     <head>
 	<title>Slide Navbar</title>
@@ -12,7 +12,7 @@
 			<div class="volunteerform">
 			
       <div id="form" class="text-center">
-    <form @submit.prevent="volunteer">
+    <form v-on:submit.prevent="submitForm">
       <label for="chk" aria-hidden="true">Volunteer Signup</label>
       <div role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
@@ -33,7 +33,7 @@
 
         <input type="email" id="email" v-model="newVolunteer.email" placeholder="Email" required />
       </div>
-      <button type="submit" v-on:click="submitForm">Submit</button> 
+      <button type="submit" >Submit</button> 
     </form>
   </div>
       
@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import volunteerService from "../services/VolunteerService";
 
 export default {
@@ -62,11 +63,11 @@ export default {
   data() {
     return {
       newVolunteer: {
-        fullName: "",
-        age: "",
-        phoneNumber: "",
-        address: "",
-        email: "",
+        fullName: '',
+        age: '',
+        phoneNumber: '',
+        address: '',
+        email: '',
         role: 'volunteer',
         isActive: false
       },
@@ -79,11 +80,14 @@ export default {
     
   },
   methods: {
-    volunteerSubmit() {
+    submitForm() {
       volunteerService
-        .volunteerSubmission(this.user)
+        .volunteerSubmission(this.newVolunteer)
+        axios.post('/volunteer', this.newVolunteer)
         .then(response => {
           if (response.status == 200) {
+
+            
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
             this.$router.push("/");
@@ -101,32 +105,32 @@ export default {
       this.registrationErrors = false;
       this.registrationErrorMsg = 'There were problems registering this user.';
     },
-    submitForm() {
-      const volunteerData = {
-        fullName: this.newVolunteer.fullName,
-        age: this.newVolunteer.age,
-        phoneNumber: this.newVolunteer.phoneNumber,
-        address: this.newVolunteer.address,
-        email: this.newVolunteer.email
-      };
+    // submitForm() {
+    //   const volunteerData = {
+    //     fullName: this.newVolunteer.fullName,
+    //     age: this.newVolunteer.age,
+    //     phoneNumber: this.newVolunteer.phoneNumber,
+    //     address: this.newVolunteer.address,
+    //     email: this.newVolunteer.email
+    //   };
 
-      axios.post('/volunteers', volunteerData)
-        .then(response => {
-          if (response.status == 201) {
-            this.$router.push({
-              path: '/volunteers',
-              query: { volunteerAdded: 'success' },
-            });
-          }
-        })
-        .catch(error => {
-          const response = error.response;
-          this.registrationErrors = true;
-          if (response.status === 400) {
-            this.registrationErrorMsg = 'There was a problem submitting the volunteer form.';
-          }
-        });
-    }
+    //   axios.post('/volunteer', volunteerData)
+    //     .then(response => {
+    //       if (response.status == 201) {
+    //         this.$router.push({
+    //           path: '/volunteer',
+    //           query: { volunteerAdded: 'success' },
+    //         });
+    //       }
+    //     })
+    //     .catch(error => {
+    //       const response = error.response;
+    //       this.registrationErrors = true;
+    //       if (response.status === 400) {
+    //         this.registrationErrorMsg = 'There was a problem submitting the volunteer form.';
+    //       }
+    //     });
+    // }
   }
 };
 </script>

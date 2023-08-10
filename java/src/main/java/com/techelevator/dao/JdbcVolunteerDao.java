@@ -23,7 +23,7 @@ public class JdbcVolunteerDao implements VolunteerDao {
 
     public Volunteer createVolunteer(VolunteerDto volunteer) {
         Volunteer volunteerSignup =  null;
-        String sql = "INSERT INTO volunteersignup (name, age, phone_number, address, email, isActive VALUES (?,?,?,?,?) RETURNING volunteer_id;";
+        String sql = "INSERT INTO volunteersignup (name, age, phone_number, address, email, is_active) VALUES (?,?,?,?,?,?) RETURNING volunteer_id;";
         try {
             int newVolunteerid = jdbcTemplate.queryForObject(sql, int.class, volunteer.getFullName(),volunteer.getAge(),volunteer.getPhoneNumber(), volunteer.getAddress(), volunteer.getEmail(), volunteer.getisActive());
             volunteerSignup = getVolunteerById(newVolunteerid);

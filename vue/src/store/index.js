@@ -29,7 +29,7 @@ export default new Vuex.Store({
       spayedNeutered: '',
       description: ''
     },
-    volunteersignup: {
+    newVolunteer: {
       name: '',
       age: '',
       phoneNumber: '',
