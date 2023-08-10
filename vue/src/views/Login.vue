@@ -165,6 +165,9 @@ export default {
 label {
   margin-right: 0.5rem;
 }
+.#form > form {
+  margin:0;
+}
 
 
 /* ///// */
@@ -178,7 +181,9 @@ body{
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-  
+  justify-content: center;
+  padding-top:5px;
+  border-radius:20px;
 }
 * {
   font-family: "Jost";
@@ -192,9 +197,9 @@ body{
 	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
-  
-  
-
+}
+div.main {
+  background: linear-gradient(to bottom, #3225a3, #221a6b, #161142);
 }
 #chk{
 	display: none;

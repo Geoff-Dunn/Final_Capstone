@@ -17,27 +17,23 @@
       <div role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <div class="form-input-group">
-        
+      <div class="form-input-group"> 
         <input type="text" id="Name" v-model="newVolunteer.fullName" placeholder="Full Name" required autofocus />
       </div>
       <div class="form-input-group">
-      
         <input type="number" id="age" v-model="newVolunteer.age" placeholder="Age" required />
       </div>
       <div class="form-input-group">
-      
         <input type="tel" id="phone" v-model="newVolunteer.phoneNumber" placeholder="Phone Number" required />
       </div>
       <div class="form-input-group">
-      
         <input type="text" id="address" v-model="newVolunteer.address" placeholder="Address" required />
       </div>
       <div class="form-input-group">
-      
+
         <input type="email" id="email" v-model="newVolunteer.email" placeholder="Email" required />
       </div>
-      <button type="submit">Submit</button> 
+      <button type="submit" v-on:click="submitForm">Submit</button> 
     </form>
   </div>
       
@@ -71,11 +67,13 @@ export default {
         phoneNumber: "",
         address: "",
         email: "",
-        role: 'volunteer'
+        role: 'volunteer',
+        isActive: false
       },
 
+
       registrationErrors: false,
-      registrationErrorMsg: 'There were problems registering this user.',
+      registrationErrorMsg: 'The form could not be sumbitted.',
       invalidCredentials: false
     };
     
@@ -103,8 +101,33 @@ export default {
       this.registrationErrors = false;
       this.registrationErrorMsg = 'There were problems registering this user.';
     },
-  },
-  
+    submitForm() {
+      const volunteerData = {
+        fullName: this.newVolunteer.fullName,
+        age: this.newVolunteer.age,
+        phoneNumber: this.newVolunteer.phoneNumber,
+        address: this.newVolunteer.address,
+        email: this.newVolunteer.email
+      };
+
+      axios.post('/volunteers', volunteerData)
+        .then(response => {
+          if (response.status == 201) {
+            this.$router.push({
+              path: '/volunteers',
+              query: { volunteerAdded: 'success' },
+            });
+          }
+        })
+        .catch(error => {
+          const response = error.response;
+          this.registrationErrors = true;
+          if (response.status === 400) {
+            this.registrationErrorMsg = 'There was a problem submitting the volunteer form.';
+          }
+        });
+    }
+  }
 };
 </script>
 
@@ -128,19 +151,30 @@ body{
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  padding-top:5px;
+  border-radius:20px;
+  
 }
 * {
   font-family: "Jost";
 }
 .main{
-	width: 500px;
-	height: 650px;
+  width: 500px;
+	height: 600px;
   margin-bottom: 100px;
 	background: red;
 	overflow: hidden;
 	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
+  
+
+}
+div.main {
+  background: linear-gradient(to bottom, #3225a3, #221a6b, #161142);
+  margin-top: 0%;
+  margin-top:0px;
+  
 
 }
 #chk{

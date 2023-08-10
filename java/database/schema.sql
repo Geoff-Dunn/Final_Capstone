@@ -22,5 +22,15 @@ CREATE TABLE pets (
 	picture varchar (200) NOT NULL,
 	adopted boolean NOT NULL
 );
+CREATE TABLE volunteersignup (
+    volunteer_id SERIAL,
+    name varchar (50) NOT NULL UNIQUE,
+    age integer NOT NULL,
+    phone_number varchar (20) NOT NULL,
+    address varchar (50) NOT NULL,
+    email varchar (50) NOT NULL,
+    is_active boolean,
+    CONSTRAINT PK_volunteer PRIMARY KEY (volunteer_id)
+);
 
 COMMIT TRANSACTION;
