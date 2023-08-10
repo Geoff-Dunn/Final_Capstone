@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <button class="button" v-on:click="SubmitDonation">Donate Now</button>
+  <!-- <button class="button" v-on:click="SubmitDonation">Donate Now</button> -->
 </body>
 
 

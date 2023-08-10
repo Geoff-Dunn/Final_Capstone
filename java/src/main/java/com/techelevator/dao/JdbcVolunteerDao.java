@@ -54,10 +54,7 @@ public class JdbcVolunteerDao implements VolunteerDao {
         return null;
     }
 
-    @Override
-    public List<Volunteer> getVolunteers() {
-        return null;
-    }
+
 
 
 

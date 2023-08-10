@@ -30,7 +30,6 @@
         <input type="text" id="address" v-model="newVolunteer.address" placeholder="Address" required />
       </div>
       <div class="form-input-group">
-
         <input type="email" id="email" v-model="newVolunteer.email" placeholder="Email" required />
       </div>
       <button type="submit" v-on:click="submitForm">Submit</button> 
@@ -46,14 +45,10 @@
     </form>
   </div>
 
-
-
-
-
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import authService from "../services/AuthService";
 
 export default {
@@ -126,32 +121,32 @@ export default {
       this.registrationErrors = false;
       this.registrationErrorMsg = 'There were problems registering this user.';
     },
-    submitForm() {
-      const volunteerData = {
-        fullName: this.newVolunteer.fullName,
-        age: this.newVolunteer.age,
-        phoneNumber: this.newVolunteer.phoneNumber,
-        address: this.newVolunteer.address,
-        email: this.newVolunteer.email
-      };
+    // submitForm() {
+    //   const volunteerData = {
+    //     fullName: this.newVolunteer.fullName,
+    //     age: this.newVolunteer.age,
+    //     phoneNumber: this.newVolunteer.phoneNumber,
+    //     address: this.newVolunteer.address,
+    //     email: this.newVolunteer.email
+    //   };
 
-      axios.post('/volunteers', volunteerData)
-        .then(response => {
-          if (response.status == 201) {
-            this.$router.push({
-              path: '/volunteers',
-              query: { volunteerAdded: 'success' },
-            });
-          }
-        })
-        .catch(error => {
-          const response = error.response;
-          this.registrationErrors = true;
-          if (response.status === 400) {
-            this.registrationErrorMsg = 'There was a problem submitting the volunteer form.';
-          }
-        });
-    }
+    //   axios.post('/volunteer', volunteerData)
+    //     .then(response => {
+    //       if (response.status == 201) {
+    //         this.$router.push({
+    //           path: '/volunteer',
+    //           query: { volunteerAdded: 'success' },
+    //         });
+    //       }
+    //     })
+    //     .catch(error => {
+    //       const response = error.response;
+    //       this.registrationErrors = true;
+    //       if (response.status === 400) {
+    //         this.registrationErrorMsg = 'There was a problem submitting the volunteer form.';
+    //       }
+    //     });
+    // }
   }
 };
 </script>
