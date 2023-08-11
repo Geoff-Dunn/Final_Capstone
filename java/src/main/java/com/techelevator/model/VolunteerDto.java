@@ -1,5 +1,9 @@
 package com.techelevator.model;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@CrossOrigin
+
 public class VolunteerDto {
     public String fullName;
     public int age;

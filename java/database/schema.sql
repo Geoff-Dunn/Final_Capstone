@@ -2,6 +2,7 @@ BEGIN TRANSACTION;
 
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS pets;
+DROP TABLE IF EXISTS volunteersignup;
 
 CREATE TABLE users (
 	user_id SERIAL,
@@ -32,5 +33,6 @@ CREATE TABLE volunteersignup (
     is_active boolean,
     CONSTRAINT PK_volunteer PRIMARY KEY (volunteer_id)
 );
+
 
 COMMIT TRANSACTION;

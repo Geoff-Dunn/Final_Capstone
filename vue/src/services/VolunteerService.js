@@ -9,5 +9,5 @@ export default {
     volunteerSubmission(user) {
       return http.post('/volunteer', user)
     },
-    
+
   }

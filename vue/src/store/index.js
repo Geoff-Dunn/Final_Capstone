@@ -54,6 +54,13 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    SET_SPECIES(state, species) {
+      state.species=species;
+    },
+    SET_ACTIVE_SPECIES(state, speciesId){
+      state.activeSpecies=speciesId;
     }
+    
   }
 })

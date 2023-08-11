@@ -1,6 +1,12 @@
 package com.techelevator.controller;
 
 
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
+
+
+
 import com.techelevator.dao.JdbcPetsDao;
 import com.techelevator.exception.DaoException;
 import com.techelevator.model.Pets;
@@ -60,3 +66,4 @@ public class PetsController {
 
     }
 }
+
