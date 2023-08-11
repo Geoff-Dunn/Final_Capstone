@@ -1,6 +1,6 @@
 package com.techelevator.model;
 
-public class Pets {
+public class PetsDto {
     private int petId;
     private String petName;
     private String species;
@@ -11,21 +11,21 @@ public class Pets {
     private String picture;
     private boolean isAdopted;
 
-    public Pets(String petName, String species, String sex, int age, boolean isSpayedNeutered, String description, String picture, boolean adopted) {
+    public void Pets(String petName, String species, String sex, int age, boolean isSpayedNeutered, String description, String picture, boolean isAdopted) {
         this.petName = petName;
         this.species = species;
         this.sex = sex;
-        this.age= age;
+        this.age = age;
         this.isSpayedNeutered = isSpayedNeutered;
         this.description = description;
         this.picture = picture;
-        this.isAdopted= isAdopted;
+        this.isAdopted = isAdopted;
     }
 
-    public Pets() {
 
+    public boolean getIsSpayedNeutered() {
+        return isSpayedNeutered;
     }
-
 
     public String getPetName() {
         return petName;
@@ -97,7 +97,5 @@ public class Pets {
 
     public void setPetId(int petIdd) {
         this.petId = petId;
-
     }
 }
-

@@ -1,16 +1,69 @@
 package com.techelevator.controller;
 
-//import com.techelevator.dao.JdbcPetsDao;
-import com.techelevator.dao.PetsDao;
+
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
-//@CrossOrigin
 
-//@RestController
-//public class PetsController {
-//    private JdbcPetsDao petsDao;
-//
-//    public PetsController(JdbcPetsDao dao) {
-//        this.petsDao = dao;
-//    }
-//}
+
+
+import com.techelevator.dao.JdbcPetsDao;
+import com.techelevator.exception.DaoException;
+import com.techelevator.model.Pets;
+import com.techelevator.model.PetsDto;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
+import javax.validation.Valid;
+import java.util.List;
+
+
+@RestController
+@CrossOrigin
+public class PetsController {
+    private JdbcPetsDao PetsDao;
+
+    public PetsController(JdbcPetsDao dao) {
+        this.PetsDao = dao;
+    }
+//...........................................................................
+
+    @RequestMapping(value = "/pets", method = RequestMethod.GET)
+    public List<Pets> getAllPets() {
+        List<Pets> pets = PetsDao.getAllPets();
+        return pets;
+    }
+
+//...........................................................................
+
+    @RequestMapping(value = "/pets/{id}", method = RequestMethod.PUT)
+    public Pets updatePets(@Valid @RequestBody Pets updatePets, @PathVariable int id) {
+        updatePets.setPetId(id);
+        try {
+            Pets updated = PetsDao.updatePets(id);
+            return updated;
+        }
+        //what happens if the ID doesn't exist in the database?
+        catch (DaoException ex) {
+            //... if I can't update the pets because it doesn't exist...
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet not found.");
+            //throw an exception with a HTTP status code (404), and a message
+        }
+    }
+
+//...........................................................................
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(path = "/pets/create", method = RequestMethod.POST)
+    public Pets createPets(@Valid @RequestBody PetsDto newpet) {
+        try {
+            Pets pets= PetsDao.createPets(newpet);
+            return pets;
+        } catch (DaoException e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Pet creation failed!");
+        }
+
+    }
+}
+

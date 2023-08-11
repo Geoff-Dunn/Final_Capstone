@@ -9,6 +9,8 @@ import java.util.List;
 
 public interface VolunteerDao {
     Volunteer getVolunteerById(int id);
+
     List <Volunteer> getVolunteers(boolean is_active);
+
     Volunteer createVolunteer(VolunteerDto volunteer);
 }
