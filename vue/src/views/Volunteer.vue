@@ -9,10 +9,11 @@
 </head>
 <body>
 	<div class="main">  	
-			<div class="volunteerform">
+			<div class="volunteerform" v-if="this.hideForm()">
 			
       <div id="form" class="text-center">
     <form v-on:submit.prevent="submitForm">
+      <!-- <h2  v-if="$store.state.user.authorities[0].name === 'ROLE_ADMIN'">You are an admin!</h2> -->
       <label for="chk" aria-hidden="true">Volunteer Signup</label>
       <div role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
@@ -34,10 +35,23 @@
       </div>
       <button type="submit" >Submit</button> 
     </form>
-  </div>
-      
-      
+  </div>     
       </div>
+    <!-- Volunteer list goes here -->
+    <div class="volunteerList" v-if="!this.hideForm()">
+      <table>
+        <tr id="vList">
+          <th>Name</th>&nbsp;&nbsp;
+          <th>Phone Number</th>&nbsp;&nbsp;
+          <th>Active</th>
+        </tr>
+        <tr id="vList" v-for="volunteer in volunteerList" v-bind:key="volunteer.id">
+          <td>{{volunteer.fullName}}</td>&nbsp;&nbsp;
+          <td>{{volunteer.phoneNumber}}</td>&nbsp;&nbsp;
+          <td>{{volunteer.isActive}}</td>
+        </tr>
+      </table>
+    </div>
 	</div>
 </body>
 
@@ -50,13 +64,16 @@
 <script>
 import axios from 'axios';
 import volunteerService from "../services/VolunteerService";
+import VolunteerService from '../services/VolunteerService';
 
 export default {
   name: "volunteer",
   components: {},
+
   
   data() {
     return {
+      volunteerList:[],
       newVolunteer: {
         fullName: '',
         age: '',
@@ -67,12 +84,22 @@ export default {
         isActive: false
       },
 
+      
+
 
       registrationErrors: false,
       registrationErrorMsg: 'The form could not be sumbitted.',
       invalidCredentials: false
     };
     
+  },
+
+  created() {
+    
+      VolunteerService.getVolunteers()
+          .then ( (response) => {
+          this.volunteerList = response.data;
+      });
   },
   methods: {
     submitForm() {
@@ -100,32 +127,21 @@ export default {
       this.registrationErrors = false;
       this.registrationErrorMsg = 'There were problems registering this user.';
     },
-    // submitForm() {
-    //   const volunteerData = {
-    //     fullName: this.newVolunteer.fullName,
-    //     age: this.newVolunteer.age,
-    //     phoneNumber: this.newVolunteer.phoneNumber,
-    //     address: this.newVolunteer.address,
-    //     email: this.newVolunteer.email
-    //   };
+    
+    displayVolunteers(){
+      VolunteerService.getVolunteers()
+      axios.get(`/volunteer`)
+      .then ( (response) => {
+          this.volunteerList = response.data
+      });
+    },
 
-    //   axios.post('/volunteer', volunteerData)
-    //     .then(response => {
-    //       if (response.status == 201) {
-    //         this.$router.push({
-    //           path: '/volunteer',
-    //           query: { volunteerAdded: 'success' },
-    //         });
-    //       }
-    //     })
-    //     .catch(error => {
-    //       const response = error.response;
-    //       this.registrationErrors = true;
-    //       if (response.status === 400) {
-    //         this.registrationErrorMsg = 'There was a problem submitting the volunteer form.';
-    //       }
-    //     });
-    // }
+    hideForm() {
+      if (this.$store.state.user.authorities[0].name !== 'ROLE_ADMIN' && this.$store.state.user.authorities[0].name !== 'volunteer'){
+        return true
+      }
+    }
+    
   }
 };
 </script>
@@ -137,6 +153,13 @@ export default {
 label {
   margin-right: 0.5rem;
 }
+
+.volunteerList {
+  color: white;
+  display:flex;
+  justify-content: space-evenly;
+}
+
 
 
 /* ///// */
