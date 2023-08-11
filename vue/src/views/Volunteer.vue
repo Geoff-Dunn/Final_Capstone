@@ -36,7 +36,6 @@
     </form>
   </div>
       
-      
       </div>
 	</div>
 </body>
@@ -80,12 +79,8 @@ export default {
         .volunteerSubmission(this.newVolunteer)
         axios.post('/volunteer', this.newVolunteer)
         .then(response => {
-          if (response.status == 200) {
-
-            
-            this.$store.commit("SET_AUTH_TOKEN", response.data.token);
-            this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/");
+          if (response.status == 201) {
+            alert("Volunteer Form Sumbitted Sucessfully!")
           }
         })
         .catch(error => {
