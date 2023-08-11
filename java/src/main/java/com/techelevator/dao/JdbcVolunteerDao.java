@@ -34,9 +34,11 @@ public class JdbcVolunteerDao implements VolunteerDao {
         }
         return volunteerSignup;
     }
+
+
     public List<Volunteer> getVolunteers(boolean is_active) {
         List<Volunteer> volunteers = new ArrayList<>();
-        String sql = "SELECT name, age, phone_number, address, email, isActive FROM volunteersignup WHERE is_active = ?;";
+        String sql = "SELECT name, age, phone_number, address, email, is_active FROM volunteersignup WHERE is_active = ?;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, is_active);
             while (results.next()) {

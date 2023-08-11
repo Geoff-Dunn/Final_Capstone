@@ -18,19 +18,17 @@ import java.util.List;
 @CrossOrigin
 public class VolunteerController {
     private JdbcVolunteerDao VolunteerDao;
-    public  VolunteerController(JdbcVolunteerDao dao) {
+
+    public VolunteerController(JdbcVolunteerDao dao) {
         this.VolunteerDao = dao;
     }
+
     @CrossOrigin
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(value ="/volunteer", method= RequestMethod.POST)
+    @RequestMapping(value = "/volunteer", method = RequestMethod.POST)
     public Volunteer volunteerSignup(@Valid @RequestBody VolunteerDto newVolunteer) {
-//        Volunteer volunteer;
         try {
             Volunteer volunteer = VolunteerDao.createVolunteer(newVolunteer);
-//            if (volunteer == null) {
-//                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Volunteer registration failed!");
-//            }
             return volunteer;
         } catch (DaoException e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Volunteer registration failed!");
@@ -38,10 +36,11 @@ public class VolunteerController {
 
     }
 
-    @CrossOrigin
-    @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
-    public List<Volunteer> getVolunteers() {
-        List<Volunteer> volunteers = VolunteerDao.getVolunteers();
-        return volunteers;
-    }
+
+//    @CrossOrigin
+//    @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
+//    public List<Volunteer> getVolunteers() {
+//        List<Volunteer> volunteers = VolunteerDao.getVolunteers();
+//        return volunteers;
+//    }
 }
