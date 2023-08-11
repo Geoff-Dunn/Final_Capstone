@@ -30,6 +30,7 @@ CREATE TABLE volunteersignup (
     phone_number varchar (20) NOT NULL,
     address varchar (50) NOT NULL,
     email varchar (50) NOT NULL,
+    role varchar (50),
     is_active boolean,
     CONSTRAINT PK_volunteer PRIMARY KEY (volunteer_id)
 );

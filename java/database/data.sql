@@ -36,7 +36,7 @@ INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, pic
 COMMIT TRANSACTION;
 
 BEGIN TRANSACTION;
-INSERT INTO volunteersignup (name, age, phone_number, address, email, is_active) 
-VALUES ('Dan', 29, '4405396774', '1234 Madeup Way', 'notmyemail@gmail.com', 'true');
+INSERT INTO volunteersignup (name, age, phone_number, address, email, role, is_active)
+VALUES ('Dan', 29, '4405396774', '1234 Madeup Way', 'notmyemail@gmail.com', 'volunteer', 'true');
 
 COMMIT TRANSACTION;

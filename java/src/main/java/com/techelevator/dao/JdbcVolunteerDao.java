@@ -55,7 +55,7 @@ public class JdbcVolunteerDao implements VolunteerDao {
 
     public List<Volunteer> getAllVolunteers() {
         List<Volunteer> volunteers = new ArrayList<>();
-        String sql = "SELECT name, age, phone_number, address, email, is_active FROM volunteersignup;";
+        String sql = "SELECT * FROM volunteersignup;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while (results.next()) {
@@ -84,7 +84,7 @@ public class JdbcVolunteerDao implements VolunteerDao {
         volunteer.setAddress(rs.getString("address"));
         volunteer.setAge(rs.getInt("age"));
         volunteer.setIsActive(rs.getBoolean("is_active"));
-        volunteer.setPhoneNumber((rs.getString("phone_Number")));
+        volunteer.setPhoneNumber((rs.getString("phone_number")));
         volunteer.setRole(rs.getString("role"));
         return volunteer;
     }
