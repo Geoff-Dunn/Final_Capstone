@@ -13,4 +13,6 @@ public interface VolunteerDao {
     List <Volunteer> getVolunteers(boolean is_active);
 
     Volunteer createVolunteer(VolunteerDto volunteer);
+
+    List <Volunteer> getAllVolunteers();
 }

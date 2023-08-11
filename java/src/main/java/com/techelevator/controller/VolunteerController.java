@@ -37,10 +37,11 @@ public class VolunteerController {
     }
 
 
-//    @CrossOrigin
-//    @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
-//    public List<Volunteer> getVolunteers() {
-//        List<Volunteer> volunteers = VolunteerDao.getVolunteers();
-//        return volunteers;
-//    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
+    public List<Volunteer> getAllVolunteers() {
+        List<Volunteer> volunteers = VolunteerDao.getAllVolunteers();
+        return volunteers;
+    }
 }

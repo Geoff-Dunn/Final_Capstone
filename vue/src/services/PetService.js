@@ -6,14 +6,37 @@ const http = axios.create({
 
 export default {
 
-    getpets(pet) {
-      return http.get('/', pet)
-    },
-    updatepet(pet) {
-        return http.put('/', pet)
-    },
-    newpet(pet) {
-      return http.post('/',pet)
-    }
+  getSpecies() {
+    return http.get('/species');
+  },
+
+  getPets(speciesID) {
+    return http.get(`/species/${speciesID}`)
+  },
+
+  getPet(petID) {
+    return http.get(`/pets/${petID}`)
+  },
+
+  addPet(pet) {
+    return http.post('/pets', pet);
+  },
+
+  updatePet(pet) {
+    return http.put(`/Pets/${pet.id}`, pet);
+  },
+
+  deletePet(petID) {
+    return http.delete(`/pets/${petID}`);
+  },
+
+  addspecies(species) { 
+    return http.post('/Species', species);
+  },
+
+  deletespecies(speciesID) {
+    return http.delete(`/Species/${speciesID}`);
+  }
+
     
   }
