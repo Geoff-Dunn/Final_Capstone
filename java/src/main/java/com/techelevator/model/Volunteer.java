@@ -67,5 +67,8 @@ public class Volunteer {
     public void setIsActive(boolean isActive) {
         this.isActive = this.isActive;
     }
+
+    public void setVolunteerId(int volunteerId) {
     }
+}
 

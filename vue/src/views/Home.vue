@@ -1,295 +1,32 @@
 <template>
   <div class="home">
-    <!-- <h1>Paw Prints Pet Rescue</h1> -->
     <head>
 	<title>Slide Navbar</title>
 	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
-<!-- <h2 class="adoptiontitle">Paw Prints Pet Rescue </h2> -->
-<h3 class="title">Cats for Adoption</h3>
-<div class="container">  
-  
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\cats\cat_1.png">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">Priscilla</h3>
-        <p class="content-text">Priscilla is much too dignified to sit on laps.</p>
-      </div>
-    <!-- </a> -->
-  </div>
+<h2 class="adoptiontitle">Paw Prints Pet Rescue </h2>
 
-  
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\cats\cat_2.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
 
-  
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\cats\cat_3.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">Bruce</h3>
-        <p class="content-text">Bruce loves his flower necklace and will fight you if you try to take it away.</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\cats\cat_4.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\cats\cat_5.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\cats\cat_6.png">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\cats\cat_7.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <!-- <h3 class="title">Text fadeIn bottom</h3> -->
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\cats\cat_8.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
+<div style="display: flex;" class="buttons">
+  <button type="button">Dogs for Adoption</button>
+  <button type="button">Cats for Adoption</button>
+  <button type="button">Rabbits for Adoption</button>
 </div>
 
-<h3 class="title">Rabbits for Adoption</h3>
+
 <div class="container">  
-  
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+  <div class="content" v-for="pets in petList" :key="pets.id">
       <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_1.png">
+        <img class="content-image" src="pets.picture">
       <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
+        <p class="content-title">{{pets.petName}}</p>
+        <p class="content-text">{{pets.description}}</p>
+        <p class="content-text">{{pets.age}}</p>
+        <p class="content-text">{{pets.sex}}</p>
       </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_2.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_3.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_4.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_5.png">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_6.png">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_7.png">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <!-- <h3 class="title">Text fadeIn bottom</h3> -->
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_8.png">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
   </div>
 </div>
-
-<h3 class="title">Dogs for Adoption</h3>
-<div class="container">  
-  
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_1.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_2.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_3.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_4.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_5.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_6.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_7.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <!-- <h3 class="title">Text fadeIn bottom</h3> -->
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_8.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-</div>
-
 </div>
   
 
@@ -297,13 +34,77 @@
 </template>
 
 <script>
+import axios from 'axios';
+import petService from '../services/PetService';
+import PetService from '../services/PetService';
+
 export default {
-  name: "home"
+  name: "pets",
+  component: {},
+
+    data() {
+    return {
+      petList:[],
+      pets: {
+        petName: '',
+        species: '',
+        sex: '',
+        age: '',
+        isSpayedNeutered: '',
+        description: '',
+        picture: '',
+        isAdopted: false
+      },
+
+      registrationErrors: false,
+      registrationErrorMsg: 'The form could not be sumbitted.',
+      invalidCredentials: false
+    };
+    },
+
+  created() {
+    
+      PetService.getPets()
+          .then ( (response) => {
+          this.petList = response.data;
+      });
+    
+        
+  },
+  methods: {
+    displayPets(){
+      petService.displayPets()
+      axios.get(`/`)
+      .then ( (response) => {
+          this.petList = response.data
+      });
+    },
+    }
+
 };
+    
 </script>
 
 
 <style scoped>
+#app > div.home > div.buttons > button {
+  justify-content: center;
+  width: 20%;
+	height: 50px;
+	justify-content: ;
+	display: block;
+	color: #fff;
+	background: #d16602;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+
+	border-radius: 5px;
+	cursor: pointer;
+}
+button:hover{
+	background: #444cb8;
+}
 #app > div.home {
 	justify-content: center;
   padding-top:5px;
@@ -313,9 +114,7 @@ export default {
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
   border-radius:20px;
 }
-div.main {
-  
-}
+
 .container {
   display:flex;
   flex-direction: row;
