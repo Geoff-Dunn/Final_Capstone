@@ -63,7 +63,7 @@
 
 <script>
 import axios from 'axios';
-import volunteerService from "../services/VolunteerService";
+import volunteerService from  '../services/VolunteerService';
 import VolunteerService from '../services/VolunteerService';
 
 export default {
@@ -125,7 +125,7 @@ export default {
     },
     
     displayVolunteers(){
-      VolunteerService.getVolunteers()
+      VolunteerService.displayVolunteers()
       axios.get(`/volunteer`)
       .then ( (response) => {
           this.volunteerList = response.data
