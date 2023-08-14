@@ -10,4 +10,12 @@ export default {
       return http.post('/volunteer', user)
     },
 
+    getVolunteers(){
+      return http.get('/volunteer');
+    },
+    updateVolunteer() {
+      return http.put('/volunteer')
+    },
+
+
   }

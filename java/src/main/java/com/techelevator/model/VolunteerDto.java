@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin
 
 public class VolunteerDto {
+    public int volunteerId;
     public String fullName;
     public int age;
     public String phoneNumber;
@@ -56,5 +57,11 @@ public class VolunteerDto {
     }
     public void setIsActive(boolean isActive) {
         this.isActive = this.isActive;
+    }
+    public int getVolunteerId(){
+        return volunteerId;
+    }
+    public void setVolunteerId(int volunteerId) {
+        this.volunteerId=volunteerId;
     }
 }

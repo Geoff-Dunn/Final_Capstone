@@ -28,8 +28,8 @@ public class PetsController {
         this.PetsDao = dao;
     }
 //...........................................................................
-
-    @RequestMapping(value = "/pets", method = RequestMethod.GET)
+    @CrossOrigin
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Pets> getAllPets() {
         List<Pets> pets = PetsDao.getAllPets();
         return pets;
@@ -37,25 +37,25 @@ public class PetsController {
 
 //...........................................................................
 
-    @RequestMapping(value = "/pets/{id}", method = RequestMethod.PUT)
-    public Pets updatePets(@Valid @RequestBody Pets updatePets, @PathVariable int id) {
-        updatePets.setPetId(id);
-        try {
-            Pets updated = PetsDao.updatePets(id);
-            return updated;
-        }
-        //what happens if the ID doesn't exist in the database?
-        catch (DaoException ex) {
-            //... if I can't update the pets because it doesn't exist...
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet not found.");
-            //throw an exception with a HTTP status code (404), and a message
-        }
-    }
+//    @RequestMapping(value = "/", method = RequestMethod.PUT)
+//    public Pets updatePets(@Valid @RequestBody Pets updatePets, @PathVariable int id) {
+//        updatePets.setPetId(id);
+//        try {
+//            Pets updated = PetsDao.updatePets(id);
+//            return updated;
+//        }
+//        //what happens if the ID doesn't exist in the database?
+//        catch (DaoException ex) {
+//            //... if I can't update the pets because it doesn't exist...
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet not found.");
+//            //throw an exception with a HTTP status code (404), and a message
+//        }
+//    }
 
 //...........................................................................
 
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(path = "/pets/create", method = RequestMethod.POST)
+    @RequestMapping(path = "/", method = RequestMethod.POST)
     public Pets createPets(@Valid @RequestBody PetsDto newpet) {
         try {
             Pets pets= PetsDao.createPets(newpet);
