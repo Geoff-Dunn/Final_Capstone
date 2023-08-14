@@ -72,6 +72,7 @@
           <td>{{volunteer.address}}</td>
           <td>{{volunteer.email}}</td>
           <td>{{volunteer.age}}</td>
+          <button type="activate">Activate</button>
           <td></td>
           <td></td>
         </tr>

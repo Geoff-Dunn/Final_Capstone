@@ -27,7 +27,24 @@ public class JdbcPetsDao implements PetsDao {
 
     public List<Pets> getAllPets() {
         List<Pets> listOfPets = new ArrayList<>();
-        String sql = "SELECT * FROM pets;";
+        String sql = "SELECT * FROM pets WHERE adopted is false";
+        try {
+            SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+            while (result.next()) {
+                Pets pet  = mapRowToPets(result);
+                listOfPets.add(pet);
+            }
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new DaoException("Unable to connect to server or database", e);
+        }
+        return listOfPets;
+    }
+    //...........................................................................
+
+
+    public List<Pets> getAllAdoptedPets() {
+        List<Pets> listOfPets = new ArrayList<>();
+        String sql = "SELECT * FROM pets WHERE adopted is true";
         try {
             SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
             while (result.next()) {

@@ -16,4 +16,6 @@ public interface PetsDao {
 
     List<Pets> getPetsBySpecies(String species);
 
+    List<Pets> getAllAdoptedPets();
+
 }
