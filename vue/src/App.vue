@@ -55,18 +55,17 @@
   display:flex;
  justify-content: center;
   height:125px;
-  /* width: 150px; */
   }
 
-  /* .banner img {
+  .banner img {
 
     
   } 
-  #nav a:hover{
+   #nav a:hover{
     background-color: #ffffff;
     border-radius: 5px;;
     color: #d16602;
-  }
+  } 
 
   #nav > a {
   color: white; 
@@ -88,7 +87,7 @@ a:hover {
   border-radius: 8px;
 }
 
-/* Presentational styles */
+
 a {
   color: #ffffff;
   font-size: 20px;
@@ -96,31 +95,6 @@ a {
   text-decoration: none;
 }
 
-/*  */
-
-/* ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-} */
-
-/* li {
-  float: left;
-} */
-
-/* li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-} */
-
-/* li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-} */
 
 li.dropdown {
   display: inline-block;
