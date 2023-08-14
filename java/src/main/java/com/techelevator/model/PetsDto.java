@@ -3,7 +3,6 @@ package com.techelevator.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PetsDto {
-    private int petId;
     private String petName;
     private String species;
     private String sex;
@@ -84,11 +83,11 @@ public class PetsDto {
         this.species = species;
     }
 
-    public int getPetId() {
-        return petId;
-    }
-
-    public void setPetId(int petIdd) {
-        this.petId = petId;
-    }
+//    public int getPetId() {
+//        return petId;
+//    }
+//
+//    public void setPetId(int petIdd) {
+//        this.petId = petId;
+//    }
 }

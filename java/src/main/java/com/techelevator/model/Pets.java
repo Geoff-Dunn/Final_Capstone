@@ -13,7 +13,7 @@ public class Pets {
     private String picture;
     private boolean isAdopted;
 
-    public Pets(String petName, String species, String sex, String age, boolean isSpayedNeutered, String description, String picture, boolean adopted) {
+    public Pets(String petName, String species, String sex, String age, boolean isSpayedNeutered, String description, String picture, boolean isAdopted) {
         this.petName = petName;
         this.species = species;
         this.sex = sex;
@@ -97,9 +97,15 @@ public class Pets {
         return petId;
     }
 
-    public void setPetId(int petIdd) {
-        this.petId = petId;
-
+    public void setAdopted(boolean adopted) {
+        isAdopted = adopted;
     }
+
+    public void setPetId(int petId) {
+        this.petId = petId;
+    }
+
 }
+
+
 
