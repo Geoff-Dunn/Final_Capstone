@@ -58,20 +58,20 @@
   /* width: 150px; */
   }
 
-  .banner img {
+  /* .banner img {
 
     
   } 
   #nav a:hover{
-    /* background-color: #ffffff;
+    background-color: #ffffff;
     border-radius: 5px;;
-    color: #d16602; */
+    color: #d16602;
   }
 
   #nav > a {
-  /* color: white; 
+  color: white; 
   font-size: 20px;
-  text-decoration: none; */
+  text-decoration: none;
   
 }
   a {

@@ -78,11 +78,11 @@
   </div>
 
 
-<div style="display: flex;" class="buttons">
+<!-- <div style="display: flex;" class="buttons">
   <button type="button">Dogs for Adoption</button>
   <button type="button">Cats for Adoption</button>
   <button type="button">Rabbits for Adoption</button>
-</div>
+</div> -->
 
 <h3 class="title" id="rabbitsection">Rabbits for Adoption</h3>
 <div class="container">  
@@ -177,11 +177,11 @@
   </div>
 </div>
 
-<h3 class="title" id="dogsection">Dogs for Adoption</h3>
+<h3 class="title" id="dogsection">Pets for Adoption</h3>
 <div class="container">  
   <div class="content" v-for="pets in petList" :key="pets.id">
       <div class="content-overlay"></div>
-        <img class="content-image" src="pets.picture">
+        <img class="content-image" v-bind:src="getPetPicture">
       <div class="content-details fadeIn-bottom">
         <p class="content-title">{{pets.petName}}</p>
         <p class="content-text">{{pets.description}}</p>
@@ -191,6 +191,7 @@
   </div>
 </div>
 </div>
+  </div>
   
 
   
@@ -227,22 +228,28 @@ export default {
 
   created() {
     
-      PetService.getPets()
-          .then ( (response) => {
+      PetService.getPets().then ( (response) => {
           this.petList = response.data;
       });
     
         
   },
+
+  computed: {
+    getPetPicture() {return require(this.pets.picture);}
+  },
+
   methods: {
     displayPets(){
       petService.displayPets()
       axios.get(`/`)
       .then ( (response) => {
-          this.petList = response.data
+          this.petList = response.data; 
+          
       });
     },
     }
+  
 
 };
     

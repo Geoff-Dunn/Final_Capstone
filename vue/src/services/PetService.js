@@ -6,12 +6,12 @@ const http = axios.create({
 
 export default {
 
-  getPess() {
+  getPets() {
     return http.get('/');
   },
 
-  getPets(pet) {
-    return http.get(`/`, pet)
+  getPetsBySpecies(species) {
+    return http.get(`/`, species)
   },
 
   getPet(petID) {
