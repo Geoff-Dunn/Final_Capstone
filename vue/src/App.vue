@@ -1,26 +1,37 @@
 <template>
-
   <div id="app">
-    
     <div id="nav">
-        <img id="paws" src="..\public\pawprintswhite.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <router-link class="navlink" v-bind:to="{ name: 'home' }">Adopt</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <img id="paws" src="..\public\pawprintswhite.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       -->
+      <ul>
+      <li class="dropdown">
+          <router-link class="navlink" id="dropbtn" v-bind:to="{ name: 'home' }">Adopt</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="dropdown-content">
+            <router-link class="navlink" v-bind:to="{ name: 'cats' }">Cats</router-link>
+            <router-link class="navlink" v-bind:to="{ name: 'dogs' }">Dogs</router-link>
+            <router-link class="navlink" v-bind:to="{ name: 'rabbits' }">Rabbits</router-link>
+          </div>
+      </li>
+      </ul>
       <router-link class="navlink" v-bind:to="{ name: 'volunteer' }">Volunteer</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
       <router-link class="navlink" v-bind:to="{ name: 'support' }">Support</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
       <router-link class="navlink" v-if="$store.state.token === ''" to="/login">Login/Register</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
       <router-link class="navlink" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img id="paws" src="..\public\pawprintswhitemirror.png">
+      <!-- <img id="paws" src="..\public\pawprintswhitemirror.png">
+     -->
     </div>
-    <div id="banner">
-     
-      <img src="..\public\img\Banner.png" alt="picture of animals"><img src="..\public\img\Banner.png" alt="picture of animals"><img src="..\public\img\Banner.png" alt="picture of animals">
+
+    <div class="banner" id="banner">
+      <img id="dogslogo" src="..\public\img\1.png">
+      <img id="pawlogo" src="..\public\logo-png.png">
+      <img id="catslogo" src="..\public\img\2.png">
     </div>
+    
     <router-view />
   </div>
 </template>
 
-
 <style scoped>
+
 * {
   font-family: "Jost";
 }
@@ -28,36 +39,29 @@
   height:70px;
   width:300px;
 }
+
 #nav {
   color: white;
   display:flex;
   justify-content: center;
   align-items: center;
   padding: 15px;
-	background: linear-gradient(to right, #d16602, #9c4c01, #d16602);
-  box-shadow: 2.5px 10px 25px #000;
+	background: linear-gradient(to right, #ff7b00, #d16602, #ff7b00);
   border-radius: 10px; 
   height:33px;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-
-
-#banner {
+#banner{
   display:flex;
-  color:rgba(255, 255, 255, 0);
-  justify-content: center;
-  justify-content: space-between;
-
-  /* box-shadow: 5px 20px 50px #000; */
-  margin-bottom: 10px;
-  margin-top: 10px;
+ justify-content: center;
+  height:125px;
+  /* width: 150px; */
   }
 
-  img {
-    width: 75vh;
+  .banner img {
+
     
-  }
+  } 
   #nav a:hover{
     /* background-color: #ffffff;
     border-radius: 5px;;
@@ -76,6 +80,7 @@
   padding: 0 .25rem;
   margin: 0 -.25rem;
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  border-radius: 8px;
 }
 a:hover {
   color: #d16602;
@@ -89,6 +94,70 @@ a {
   font-size: 20px;
   line-height: 1.5;
   text-decoration: none;
+}
+
+/*  */
+
+/* ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+} */
+
+/* li {
+  float: left;
+} */
+
+/* li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+} */
+
+/* li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+} */
+
+li.dropdown {
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  z-index: 1;
+  color: #d16602;
+  border-radius: 5px;
+  box-shadow: 2.5px 10px 25px #000;
+ 
+}
+
+.dropdown-content a {
+  color: #d16602;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  
+}
+
+.dropdown-content a:hover {
+  background-color: #d16602;
+
+  
+  }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  
+ 
 }
   
 </style>

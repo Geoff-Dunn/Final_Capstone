@@ -80,7 +80,7 @@ public class JdbcVolunteerDao implements VolunteerDao {
 
     private Volunteer mapRowtoVolunteer(SqlRowSet rs) {
         Volunteer volunteer = new Volunteer();
-        volunteer.setFullName(rs.getString("volunteer_id"));
+        volunteer.setFullName(rs.getString("name"));
         volunteer.setAddress(rs.getString("address"));
         volunteer.setAge(rs.getInt("age"));
         volunteer.setIsActive(rs.getBoolean("is_active"));

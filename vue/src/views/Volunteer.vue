@@ -18,7 +18,7 @@
         {{ registrationErrorMsg }}
       </div>
       <div class="form-input-group"> 
-        <input type="text" id="Name" v-model="newVolunteer.fullName" placeholder="Full Name" required autofocus />
+        <input type="text" id="Name" v-model="newVolunteer.name" placeholder="Full Name" required autofocus />
       </div>
       <div class="form-input-group">
         <input type="number" id="age" v-model="newVolunteer.age" placeholder="Age" required />
@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       newVolunteer: {
-        fullName: '',
+        name: '',
         age: '',
         phoneNumber: '',
         address: '',
@@ -66,14 +66,12 @@ export default {
         role: 'volunteer',
         isActive: false
       },
-
-
       registrationErrors: false,
       registrationErrorMsg: 'The form could not be sumbitted.',
       invalidCredentials: false
     };
-    
   },
+
   methods: {
     submitForm() {
       volunteerService
@@ -81,8 +79,6 @@ export default {
         axios.post('/volunteer', this.newVolunteer)
         .then(response => {
           if (response.status == 200) {
-
-            
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
             this.$router.push("/");
@@ -100,32 +96,6 @@ export default {
       this.registrationErrors = false;
       this.registrationErrorMsg = 'There were problems registering this user.';
     },
-    // submitForm() {
-    //   const volunteerData = {
-    //     fullName: this.newVolunteer.fullName,
-    //     age: this.newVolunteer.age,
-    //     phoneNumber: this.newVolunteer.phoneNumber,
-    //     address: this.newVolunteer.address,
-    //     email: this.newVolunteer.email
-    //   };
-
-    //   axios.post('/volunteer', volunteerData)
-    //     .then(response => {
-    //       if (response.status == 201) {
-    //         this.$router.push({
-    //           path: '/volunteer',
-    //           query: { volunteerAdded: 'success' },
-    //         });
-    //       }
-    //     })
-    //     .catch(error => {
-    //       const response = error.response;
-    //       this.registrationErrors = true;
-    //       if (response.status === 400) {
-    //         this.registrationErrorMsg = 'There was a problem submitting the volunteer form.';
-    //       }
-    //     });
-    // }
   }
 };
 </script>
@@ -149,7 +119,8 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background-color:white;
+  justify-content: center;
   padding-top:5px;
   border-radius:20px;
   
@@ -170,7 +141,7 @@ body{
 
 }
 div.main {
-  background: linear-gradient(to bottom, #3225a3, #221a6b, #161142);
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
   margin-top: 0%;
   margin-top:0px;
   

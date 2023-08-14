@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <!-- <h2 class="adoptiontitle">Paw Prints Pet Rescue </h2> -->
-<h3 class="title">Cats for Adoption</h3>
+<h3 class="title" id="catsection">Cats for Adoption</h3>
 <div class="container">  
   
   <div class="content">
@@ -102,7 +102,7 @@
   </div>
 </div>
 
-<h3 class="title">Rabbits for Adoption</h3>
+<h3 class="title" id="rabbitsection">Rabbits for Adoption</h3>
 <div class="container">  
   
   <div class="content">
@@ -195,7 +195,7 @@
   </div>
 </div>
 
-<h3 class="title">Dogs for Adoption</h3>
+<h3 class="title" id="dogsection">Dogs for Adoption</h3>
 <div class="container">  
   
   <div class="content">
@@ -304,6 +304,7 @@ export default {
 
 
 <style scoped>
+
 #app > div.home {
 	justify-content: center;
   padding-top:5px;
@@ -316,6 +317,7 @@ export default {
 div.main {
   
 }
+
 .container {
   display:flex;
   flex-direction: row;
@@ -323,6 +325,9 @@ div.main {
   flex-wrap: wrap;
   margin-right:80px;
   margin-left:80px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2.5px 10px 25px #000
 }
 h1 {
   color: white;
@@ -361,10 +366,12 @@ p {
 
 .content {
   position: relative;
-  width: 90%;
-  max-width: 400px;
+  
+  width: 400px;
+  height:400px;
   /* margin: auto; */
   margin-top: 20px;
+  margin-bottom: 20px;
   overflow: hidden;
   border-radius: 20px;
 	box-shadow: 2.5px 10px 25px #000
@@ -373,7 +380,7 @@ p {
 .content .content-overlay {
   background: rgba(0,0,0,0.7);
   position: absolute;
-  height: 99%;
+  height: 100%;
   width: 100%;
   left: 0;
   top: 0;
@@ -391,9 +398,13 @@ p {
 
 .content-image{
   width: 100%;
-  height: 400px;
+  height: 100%;
 }
 
+img{
+  height: 100px;
+  width: 50px;
+}
 .content-details {
   position: absolute;
   text-align: center;

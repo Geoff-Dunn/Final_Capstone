@@ -7,6 +7,9 @@ import Register from '../views/Register.vue'
 import Volunteer from '../views/Volunteer.vue'
 import Support from '../views/Support.vue'
 import store from '../store/index'
+import Cats from '../views/Cats.vue'
+import Dogs from '../views/Dogs.vue'
+import Rabbits from '../views/Rabbits.vue'
 
 
 Vue.use(Router)
@@ -79,7 +82,31 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
-    }
+    },
+    {
+      path: "/cats",
+      name: "cats",
+      component: Cats,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/dogs",
+      name: "dogs",
+      component: Dogs,
+      meta:{
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/rabbits",
+      name: "rabbits",
+      component: Rabbits,
+      meta:{
+        requiresAuth: false
+      }
+    },
   ]
 })
 
