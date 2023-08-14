@@ -54,8 +54,11 @@ export default {
     
       PetService.getPets().then ( (response) => {
           this.petList = response.data;
-          const filteredSpecies=this.petList.filter(pets => pets.species === 'cat');
+          const filteredSpecies=this.petList.filter(pets => pets.species === 'cat' && !pets.adopted);
           this.filteredSpecies= filteredSpecies;
+
+          
+         
       });
       
 

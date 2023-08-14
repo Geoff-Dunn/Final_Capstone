@@ -27,7 +27,7 @@ public class JdbcPetsDao implements PetsDao {
 
     public List<Pets> getAllPets() {
         List<Pets> listOfPets = new ArrayList<>();
-        String sql = "SELECT * FROM pets WHERE adopted is false";
+        String sql = "SELECT * FROM pets;";
         try {
             SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
             while (result.next()) {

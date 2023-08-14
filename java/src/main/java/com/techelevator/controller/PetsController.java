@@ -35,6 +35,11 @@ public class PetsController {
         List<Pets> pets = PetsDao.getAllPets();
         return pets;
     }
+//...........................................................................
+
+//    @CrossOrigin
+//    @RequestMapping(value = "/cats", method = RequestMethod.GET)
+//    public List<Pets> cats = PetsDao.getPetsBySpecies()
 
 
 //...........................................................................
