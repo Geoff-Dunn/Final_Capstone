@@ -26,19 +26,18 @@ public class JdbcPetsDao implements PetsDao {
 
 
     public List<Pets> getAllPets() {
-        List<Pets> ListofPets = new ArrayList<>();
+        List<Pets> listOfPets = new ArrayList<>();
         String sql = "SELECT * FROM pets;";
         try {
-            Pets pets = null;
             SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
             while (result.next()) {
-                pets = mapRowToPets(result);
-                ListofPets.add(pets);
+                Pets pet  = mapRowToPets(result);
+                listOfPets.add(pet);
             }
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database", e);
         }
-        return ListofPets;
+        return listOfPets;
     }
 //...........................................................................
 
@@ -93,14 +92,14 @@ public class JdbcPetsDao implements PetsDao {
 //map
     public Pets mapRowToPets(SqlRowSet rowSet) {
         Pets pets = new Pets();
-        pets.setPetName(rowSet.getNString("petName"));
-        pets.setSpecies(rowSet.getNString("species"));
-        pets.setSex(rowSet.getNString("sex"));
-        pets.setAge(rowSet.getInt("age"));
-        pets.setSpayedNeutered(rowSet.getBoolean("isSpayedNeutered"));
-        pets.setDescription(rowSet.getNString("description"));
-        pets.setPicture(rowSet.getNString("picture"));
-        pets.setIsAdopted(rowSet.getBoolean("isAdopted"));
+        pets.setPetName(rowSet.getString("pet_name"));
+        pets.setSpecies(rowSet.getString("species"));
+        pets.setSex(rowSet.getString("sex"));
+        pets.setAge(rowSet.getString("age"));
+        pets.setSpayedNeutered(rowSet.getBoolean("spayed_neutered"));
+        pets.setDescription(rowSet.getString("description"));
+        pets.setPicture(rowSet.getString("picture"));
+        pets.setIsAdopted(rowSet.getBoolean("adopted"));
         return pets;
 
     }

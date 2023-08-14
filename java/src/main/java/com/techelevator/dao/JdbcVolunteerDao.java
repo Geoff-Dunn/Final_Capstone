@@ -52,6 +52,18 @@ public class JdbcVolunteerDao implements VolunteerDao {
         }
         return volunteers;
     }
+//    public Volunteer updateVolunteer(int id) {
+//        String sql = "UPDATE volunteersignup SET is_active ='true' WHERE volunteer_id = ?;";
+//        try {
+//            int updatedVolunteerStatus = jdbcTemplate.queryForObject(sql, int.class, int newVolunteerid);
+//            updatedVolunteer = getVolunteerById(newVolunteerid);
+//        } catch (CannotGetJdbcConnectionException e) {
+//            throw new DaoException("Unable to connect to server or database", e);
+//        } catch (DataIntegrityViolationException e) {
+//            throw new DaoException("Data integrity violation", e);
+//        }
+//        return updatedVolunteer;
+//    }
 
     public List<Volunteer> getAllVolunteers() {
         List<Volunteer> volunteers = new ArrayList<>();
@@ -73,13 +85,15 @@ public class JdbcVolunteerDao implements VolunteerDao {
         return null;
     }
 
-
-
-
+    @Override
+    public Volunteer updateVolunteer(int id) {
+        return null;
+    }
 
 
     private Volunteer mapRowtoVolunteer(SqlRowSet rs) {
         Volunteer volunteer = new Volunteer();
+        volunteer.setVolunteerId(rs.getInt("volunteer_id"));
         volunteer.setFullName(rs.getString("name"));
         volunteer.setAddress(rs.getString("address"));
         volunteer.setAge(rs.getInt("age"));
