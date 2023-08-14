@@ -99,6 +99,7 @@ public class JdbcVolunteerDao implements VolunteerDao {
         volunteer.setAge(rs.getInt("age"));
         volunteer.setIsActive(rs.getBoolean("is_active"));
         volunteer.setPhoneNumber((rs.getString("phone_number")));
+        volunteer.setEmail((rs.getString("email")));
         volunteer.setRole(rs.getString("role"));
         return volunteer;
     }
