@@ -52,18 +52,19 @@ public class JdbcVolunteerDao implements VolunteerDao {
         }
         return volunteers;
     }
-//    public Volunteer updateVolunteer(int id) {
-//        String sql = "UPDATE volunteersignup SET is_active ='true' WHERE volunteer_id = ?;";
-//        try {
-//            int updatedVolunteerStatus = jdbcTemplate.queryForObject(sql, int.class, int newVolunteerid);
-//            updatedVolunteer = getVolunteerById(newVolunteerid);
-//        } catch (CannotGetJdbcConnectionException e) {
-//            throw new DaoException("Unable to connect to server or database", e);
-//        } catch (DataIntegrityViolationException e) {
-//            throw new DaoException("Data integrity violation", e);
-//        }
-//        return updatedVolunteer;
-//    }
+    public Volunteer updateVolunteerStatus(int id) {
+        String sql = "UPDATE volunteersignup SET is_active ='true' WHERE volunteer_id = ?;";
+        Volunteer updatedVolunteer;
+        try {
+            int updatedVolunteerStatus = jdbcTemplate.queryForObject(sql,int.class);
+            updatedVolunteer = getVolunteerById(updatedVolunteerStatus);
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new DaoException("Unable to connect to server or database", e);
+        } catch (DataIntegrityViolationException e) {
+            throw new DaoException("Data integrity violation", e);
+        }
+        return updatedVolunteer;
+    }
 
     public List<Volunteer> getAllVolunteers() {
         List<Volunteer> volunteers = new ArrayList<>();
@@ -99,6 +100,7 @@ public class JdbcVolunteerDao implements VolunteerDao {
         volunteer.setAge(rs.getInt("age"));
         volunteer.setIsActive(rs.getBoolean("is_active"));
         volunteer.setPhoneNumber((rs.getString("phone_number")));
+        volunteer.setEmail((rs.getString("email")));
         volunteer.setRole(rs.getString("role"));
         return volunteer;
     }

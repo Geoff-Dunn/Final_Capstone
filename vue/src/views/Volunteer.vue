@@ -49,6 +49,7 @@
           <td>{{volunteer.fullName}}</td>&nbsp;&nbsp;
           <td>{{volunteer.phoneNumber}}</td>&nbsp;&nbsp;
           <td>{{volunteer.isActive}}</td>
+          <button type="activate">Activate</button>
         </tr>
       </table>
     </div>
@@ -72,6 +73,7 @@
           <td>{{volunteer.address}}</td>
           <td>{{volunteer.email}}</td>
           <td>{{volunteer.age}}</td>
+          <button type="activate">Activate</button>
           <td></td>
           <td></td>
         </tr>
@@ -80,8 +82,6 @@
 
 	</div>
 </body>
-
-
     </form>
   </div>
 
@@ -191,10 +191,30 @@ label {
 .volunteerList {
   color: white;
   display:flex;
-  justify-content: space-evenly;
+  
+  justify-content: space-between;
 }
 
-
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #d16602;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: #444cb8;
+}
 
 /* ///// */
 
@@ -267,25 +287,10 @@ input{
  
 }
 button{
-	width: 60%;
-	height: 40px;
-	margin: 10px auto;
-	justify-content: center;
-	display: block;
-	color: #fff;
-	background: #d16602;
-	font-size: 1em;
-	font-weight: bold;
-	margin-top: 20px;
-	outline: none;
-	border: none;
-	border-radius: 5px;
-	transition: .2s ease-in;
+
 	cursor: pointer;
 }
-button:hover{
-	background: #444cb8;
-}
+
 .login{
 	height: 460px;
 	background: #eee;
@@ -307,4 +312,5 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+
 </style>

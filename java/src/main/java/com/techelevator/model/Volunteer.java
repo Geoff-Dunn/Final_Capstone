@@ -50,7 +50,7 @@ public class Volunteer {
         this.address = address;
     }
     public String getEmail(){
-        return address;
+        return email;
     }
     public void setEmail(String email){
         this.email = email;

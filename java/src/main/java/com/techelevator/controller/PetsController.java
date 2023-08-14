@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 
 
+import jdk.jfr.consumer.RecordedEvent;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,22 +36,20 @@ public class PetsController {
         return pets;
     }
 
+
 //...........................................................................
 
-//    @RequestMapping(value = "/", method = RequestMethod.PUT)
-//    public Pets updatePets(@Valid @RequestBody Pets updatePets, @PathVariable int id) {
-//        updatePets.setPetId(id);
-//        try {
-//            Pets updated = PetsDao.updatePets(id);
-//            return updated;
-//        }
-//        //what happens if the ID doesn't exist in the database?
-//        catch (DaoException ex) {
-//            //... if I can't update the pets because it doesn't exist...
-//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet not found.");
-//            //throw an exception with a HTTP status code (404), and a message
-//        }
-//    }
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
+    public Pets updatePets(@Valid @RequestBody Pets updatePets, @PathVariable int id) {
+        updatePets.setPetId(id);
+        try {
+            Pets updated = PetsDao.updatePets(id);
+            return updated;
+        }
+        catch (DaoException ex) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet not found.");
+        }
+    }
 
 //...........................................................................
 

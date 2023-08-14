@@ -1,112 +1,92 @@
 <template>
-  <div id="dogs">
-      <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-      <h3 class="title" id="dogsection">Dogs for Adoption</h3>
+<div id="cats">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<h3 class="title"  id="allpets">Dogs for Adoption</h3>
 <div class="container">  
-  
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+  <div class="content" v-for="pets in filteredSpecies" :key="pets.id" > 
       <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_1.jpg">
+        <img class="content-image" v-bind:src= "pets.picture">
       <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
+        <p class="content-title">{{pets.petName}}</p>
+        <p class="content-text">{{pets.description}}</p>
+        <p class="content-text">{{pets.age}}</p>
+        <p class="content-text">{{pets.sex}}</p>
       </div>
-    <!-- </a> -->
   </div>
-
-  
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_2.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_3.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_4.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_5.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_6.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_7.webp">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <!-- <h3 class="title">Text fadeIn bottom</h3> -->
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\dogs\dog_8.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
   </div>
 </div>
-  </div>
+
+
+  
 </template>
 
 <script>
-export default {
-    name:"dogs",
+import axios from 'axios';
+import petService from '../services/PetService';
+import PetService from '../services/PetService';
 
-}
+export default {
+  name: "pets",
+  component: {},
+
+    data() {
+    return {
+      filteredSpecies:[],
+      petList:[],
+      pets: {
+        petName: '',
+        species: '',
+        sex: '',
+        age: '',
+        isSpayedNeutered: '',
+        description: '',
+        picture: '',
+        isAdopted: false
+      },
+
+      registrationErrors: false,
+      registrationErrorMsg: 'The form could not be sumbitted.',
+      invalidCredentials: false
+    };
+    },
+
+  created() {
+    
+      PetService.getPets().then ( (response) => {
+          this.petList = response.data;
+          const filteredSpecies=this.petList.filter(pets => pets.species === 'dog');
+          this.filteredSpecies= filteredSpecies;
+      });
+      
+
+      
+        
+  },
+
+  computed: {
+    getPetPicture() {return require(this.pets.picture);}
+  },
+
+
+  methods: {
+    displayPets(){
+      petService.displayPets()
+      axios.get(`/`)
+      .then ( (response) => {
+          this.petList = response.data; 
+          
+      });
+    },
+    }
+  
+
+};
+    
 </script>
 
+
 <style scoped>
-#dogs {
+#cats {
 	justify-content: center;
     padding-top:5px;
 	align-items: center;
@@ -168,6 +148,7 @@ p {
   width: 90%;
   width: 400px;
   height:400px;
+  /* margin: auto; */
   margin-top: 20px;
   margin-bottom: 20px;
   overflow: hidden;
