@@ -1,13 +1,9 @@
 <template>
-  <div class="home">
-    <head>
-  <title>Slide Navbar</title>
-  <link rel="stylesheet" type="text/css" href="slide navbar style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-</head>
-<h3 class="title" id="allpets">Pets for Adoption</h3>
-<div class="container">
-  <div class="content" v-for="pets in petList" :key="pets.id">
+<div id="cats">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<h3 class="title"  id="allpets">Pets for Adoption</h3>
+<div class="container">  
+  <div class="content" v-for="pets in filteredSpecies" :key="pets.id" > 
       <div class="content-overlay"></div>
         <img class="content-image" v-bind:src= "pets.picture">
       <div class="content-details fadeIn-bottom">
@@ -17,18 +13,25 @@
         <p class="content-text">{{pets.sex}}</p>
       </div>
   </div>
-</div>
   </div>
+</div>
+
+
+  
 </template>
+
 <script>
 import axios from 'axios';
 import petService from '../services/PetService';
 import PetService from '../services/PetService';
+
 export default {
   name: "pets",
   component: {},
+
     data() {
     return {
+      filteredSpecies:[],
       petList:[],
       pets: {
         petName: '',
@@ -40,41 +43,60 @@ export default {
         picture: '',
         isAdopted: false
       },
+
       registrationErrors: false,
       registrationErrorMsg: 'The form could not be sumbitted.',
       invalidCredentials: false
     };
     },
+
   created() {
+    
       PetService.getPets().then ( (response) => {
           this.petList = response.data;
+          const filteredSpecies=this.petList.filter(pets => !pets.adopted);
+          this.filteredSpecies= filteredSpecies;
       });
+      
+
+      
+        
   },
+
   computed: {
     getPetPicture() {return require(this.pets.picture);}
   },
+
+
   methods: {
     displayPets(){
       petService.displayPets()
       axios.get(`/`)
       .then ( (response) => {
-          this.petList = response.data;
+          this.petList = response.data; 
+          
       });
     },
     }
+  
+
 };
+    
 </script>
+
+
 <style scoped>
-#app > div.home {
-  justify-content: center;
-  padding-top:5px;
-  align-items: center;
-  min-height: 100vh;
-  font-family: 'Jost', sans-serif;
-  background: linear-gradient(to bottom, #0F0C29, #302B63, #24243E);
-  border-radius:20px;
+#cats {
+	justify-content: center;
+    padding-top:5px;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    border-radius:20px;
 }
 div.main {
+  
 }
 .container {
   display:flex;
@@ -84,14 +106,14 @@ div.main {
   margin-right:80px;
   margin-left:80px;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 2.5px 10px 25px #000
+  border-radius:20px;
 }
 h1 {
   color: white;
   text-align: center;
   font-size: 80px;
 }
+
 .title {
   color: white;
   text-align: center;
@@ -110,17 +132,20 @@ p {
   font-family: "Jost";
 }
 .main-title{
-  color: #1D1D1D;
+  color: #1d1d1d;
   text-align: center;
   text-transform: capitalize;
   padding: 0.7em 0;
 }
+
 .container .title{
   color: #333;
   text-align: center;
 }
+
 .content {
   position: relative;
+  width: 90%;
   width: 400px;
   height:400px;
   /* margin: auto; */
@@ -128,8 +153,9 @@ p {
   margin-bottom: 20px;
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 2.5px 10px 25px #000
+	box-shadow: 2.5px 10px 25px #000
 }
+
 .content .content-overlay {
   background: rgba(0,0,0,0.7);
   position: absolute;
@@ -144,17 +170,16 @@ p {
   -moz-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
 }
+
 .content:hover .content-overlay{
   opacity: 1;
 }
+
 .content-image{
   width: 100%;
-  height: 100%;
+  height: 400px;
 }
-img{
-  height: 100px;
-  width: 50px;
-}
+
 .content-details {
   position: absolute;
   text-align: center;
@@ -171,11 +196,13 @@ img{
   -moz-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
+
 .content:hover .content-details{
   top: 50%;
   left: 50%;
   opacity: 1;
 }
+
 .content-details h3{
   color: #fff;
   font-weight: 500;
@@ -183,16 +210,20 @@ img{
   margin-bottom: 0.5em;
   text-transform: uppercase;
 }
+
 .content-details p{
   color: #fff;
   font-size: 0.8em;
 }
+
 .fadeIn-bottom{
   top: 80%;
 }
+
 .container a:visited {
     text-decoration: none;
 }
+
 .container a:hover {
     text-decoration: none;
 }
