@@ -35,17 +35,18 @@ public class VolunteerController {
         }
 
     }
-//    @CrossOrigin
-//    @RequestMapping(path = "/volunteer", method = RequestMethod.PUT)
-//    public Volunteer updateVolunteerStatus(@Valid @RequestBody Volunteer updatedVolunteerStatus) {
-//        try {
-//            Volunteer updated = VolunteerDao.updateVolunteer(int id);
-//            return updated;
-//        }
-//        catch(DaoException ex) {
-//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Reservation not found.");
-//        }
-//    }
+    @CrossOrigin
+    @RequestMapping(path = "/volunteer", method = RequestMethod.PUT)
+    public Volunteer updateVolunteerStatus(@Valid @RequestBody Volunteer updatedVolunteerStatus, @PathVariable int id) {
+        updatedVolunteerStatus.setVolunteerId(id);
+        try {
+            Volunteer updated = VolunteerDao.updateVolunteer(id);
+            return updated;
+        }
+        catch(DaoException ex) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Reservation not found.");
+        }
+    }
 
 
 
