@@ -57,25 +57,25 @@
     <div class="volunteerList" v-if="this.showAdmin()">
       <table>
         <tr id="vList">
-          <th>Name</th>&nbsp;&nbsp;
-          <th>Phone Number</th>&nbsp;&nbsp;
-          <th>Active</th>
-          <th>Address</th>
-          <th>Email</th>
-          <th>Age</th>
-          <th>Change Status</th>
-          <th>Delete</th>
+          <th id="label">Name</th>&nbsp;&nbsp;&nbsp;&nbsp;
+          <th id="label">Phone Number</th>&nbsp;&nbsp;
+          <th id="label">Active</th>&nbsp;&nbsp;
+          <th id="label">Address</th>&nbsp;&nbsp;
+          <th id="label">Email</th>&nbsp;&nbsp;
+          <th id="label">Age</th>&nbsp;&nbsp;
+          <th id="label">Change Status</th>
+          <th id="label">Delete</th>
         </tr>
         <tr id="vList" v-for="volunteer in volunteerList" v-bind:key="volunteer.id">
           <td>{{volunteer.fullName}}</td>&nbsp;&nbsp;
           <td>{{volunteer.phoneNumber}}</td>&nbsp;&nbsp;
-          <td>{{volunteer.isActive}}</td>
-          <td>{{volunteer.address}}</td>
-          <td>{{volunteer.email}}</td>
+          <td>{{volunteer.isActive}}</td>&nbsp;&nbsp;
+          <td>{{volunteer.address}}</td>&nbsp;&nbsp;
+          <td>{{volunteer.email}}</td>&nbsp;&nbsp;
           <td>{{volunteer.age}}</td>
-          <button type="activate">Activate</button>
-          <td></td>
-          <td></td>
+          <td><button type="activate">Activate</button></td>
+          <!-- <td></td>
+          <td></td> -->
         </tr>
       </table>
     </div>
@@ -181,6 +181,9 @@ export default {
 </script>
 
 <style scoped>
+#label{
+  font-size:22px;
+}
 .form-input-group {
   margin-bottom: 1rem;
 }
@@ -191,8 +194,17 @@ label {
 .volunteerList {
   color: white;
   display:flex;
+  /* padding-left: 50px; */
+  justify-content: space-evenly;
+
+}
+
+th td{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
   
-  justify-content: space-between;
 }
 
 button{
@@ -226,7 +238,7 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	/* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
     border-radius:20px;
   justify-content: center;
   padding-top:5px;
@@ -239,7 +251,7 @@ body{
 .main{
   width: 850px;
 	height: 600px;
-  margin-bottom: 100px;
+  margin-bottom: 330px;
 	background: red;
 	overflow: hidden;
 	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
@@ -249,9 +261,11 @@ body{
 
 }
 div.main {
+  
   background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
   margin-top: 0%;
   margin-top:0px;
+  width:2000px;
   
 
 }

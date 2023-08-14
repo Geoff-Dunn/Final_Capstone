@@ -227,4 +227,14 @@ p {
 .container a:hover {
     text-decoration: none;
 }
+
+p.content-title{
+  font-size: 50px;
+  text-decoration: underline;
+}
+
+p.content-text{
+  font-size: 20px;
+}
+
 </style>
