@@ -5,76 +5,76 @@
 	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
-<!-- <h2 class="adoptiontitle">Paw Prints Pet Rescue </h2> -->
+<!-- <h2 class="adoptiontitle">Paw Prints Pet Rescue </h2> 
 <h3 class="title" id="catsection">Cats for Adoption</h3>
 <div class="container">  
   
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank"> 
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\cats\cat_1.png">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">Priscilla</h3>
         <p class="content-text">Priscilla is much too dignified to sit on laps.</p>
       </div>
-    <!-- </a> -->
+    </a> 
   </div>
 
   
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank">
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\cats\cat_2.jpg">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a> 
   </div>
 
   
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank"> 
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\cats\cat_3.jpg">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">Bruce</h3>
         <p class="content-text">Bruce loves his flower necklace and will fight you if you try to take it away.</p>
       </div>
-    <!-- </a> -->
+    </a> 
   </div>
 
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank"> 
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\cats\cat_4.webp">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a> 
   </div>
 
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank"> 
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\cats\cat_5.jpg">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a> 
   </div>
 
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank"> 
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\cats\cat_6.png">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a> 
   </div>
 
 </div>
@@ -85,100 +85,100 @@
 <div class="container">  
   
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank"> 
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\Bunny\Bunny_1.png">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a> 
   </div>
 
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank"> 
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\Bunny\Bunny_2.jpg">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a>
   </div>
 
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank">
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\Bunny\Bunny_3.jpg">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a>
   </div>
 
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank">
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\Bunny\Bunny_4.jpg">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a>
   </div>
 
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank"> 
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\Bunny\Bunny_5.png">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a> 
   </div>
 
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank"> 
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\Bunny\Bunny_6.png">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a> 
   </div>
 
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+    <a href="..\public\img\cats\cat_2.jpg" target="_blank">
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\Bunny\Bunny_7.png">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
+    </a> 
   </div>
 
-  <!-- <h3 class="title">Text fadeIn bottom</h3> -->
+  <h3 class="title">Text fadeIn bottom</h3> 
   <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
+     <a href="..\public\img\cats\cat_2.jpg" target="_blank"> 
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\Bunny\Bunny_8.png">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
       </div>
-    <!-- </a> -->
-  </div>
-</div>
+     </a> -->
+  <!-- </div> -->
 
-<h3 class="title" id="dogsection">Pets for Adoption</h3>
+
+<h3 class="title" id="allpets">Pets for Adoption</h3>
 <div class="container">  
   <div class="content" v-for="pets in petList" :key="pets.id">
       <div class="content-overlay"></div>
-        <img class="content-image" v-bind:src="getPetPicture">
+        <img class="content-image" v-bind:src= "pets.picture">
       <div class="content-details fadeIn-bottom">
         <p class="content-title">{{pets.petName}}</p>
         <p class="content-text">{{pets.description}}</p>
@@ -187,7 +187,7 @@
       </div>
   </div>
 </div>
-</div>
+  </div>
 
   
   
