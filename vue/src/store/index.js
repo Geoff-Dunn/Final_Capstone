@@ -39,6 +39,7 @@ export default new Vuex.Store({
       isActive: false
     }
   },
+  
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
@@ -62,6 +63,5 @@ export default new Vuex.Store({
     SET_ACTIVE_SPECIES(state, speciesId){
       state.activeSpecies=speciesId;
     }
-    
   }
 })

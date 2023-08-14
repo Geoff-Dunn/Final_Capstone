@@ -1,15 +1,10 @@
 <template>
-  <div class="home">
-    <head>
-	<title>Slide Navbar</title>
-	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-</head>
-<!-- <h2 class="adoptiontitle">Paw Prints Pet Rescue </h2> -->
+<div id="cats">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <h3 class="title" id="catsection">Cats for Adoption</h3>
 <div class="container">  
-  
   <div class="content">
+     
     <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
       <div class="content-overlay"></div>
       <img class="content-image" src="..\public\img\cats\cat_1.png">
@@ -20,7 +15,6 @@
     <!-- </a> -->
   </div>
 
-  
   <div class="content">
     <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
       <div class="content-overlay"></div>
@@ -32,7 +26,6 @@
     <!-- </a> -->
   </div>
 
-  
   <div class="content">
     <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
       <div class="content-overlay"></div>
@@ -77,86 +70,10 @@
     <!-- </a> -->
   </div>
 
-
-<div style="display: flex;" class="buttons">
-  <button type="button">Dogs for Adoption</button>
-  <button type="button">Cats for Adoption</button>
-  <button type="button">Rabbits for Adoption</button>
-</div>
-
-<h3 class="title" id="rabbitsection">Rabbits for Adoption</h3>
-<div class="container">  
-  
   <div class="content">
     <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
       <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_1.png">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_2.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_3.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_4.jpg">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_5.png">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_6.png">
-      <div class="content-details fadeIn-bottom">
-        <h3 class="content-title">This is a title</h3>
-        <p class="content-text">This is a short description</p>
-      </div>
-    <!-- </a> -->
-  </div>
-
-  <div class="content">
-    <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
-      <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_7.png">
+      <img class="content-image" src="..\public\img\cats\cat_7.webp">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
@@ -168,7 +85,7 @@
   <div class="content">
     <!-- <a href="..\public\img\cats\cat_2.jpg" target="_blank"> -->
       <div class="content-overlay"></div>
-      <img class="content-image" src="..\public\img\Bunny\Bunny_8.png">
+      <img class="content-image" src="..\public\img\cats\cat_8.webp">
       <div class="content-details fadeIn-bottom">
         <h3 class="content-title">This is a title</h3>
         <p class="content-text">This is a short description</p>
@@ -176,94 +93,33 @@
     <!-- </a> -->
   </div>
 </div>
-
-<h3 class="title" id="dogsection">Dogs for Adoption</h3>
-<div class="container">  
-  <div class="content" v-for="pets in petList" :key="pets.id">
-      <div class="content-overlay"></div>
-        <img class="content-image" src="pets.picture">
-      <div class="content-details fadeIn-bottom">
-        <p class="content-title">{{pets.petName}}</p>
-        <p class="content-text">{{pets.description}}</p>
-        <p class="content-text">{{pets.age}}</p>
-        <p class="content-text">{{pets.sex}}</p>
-      </div>
-  </div>
 </div>
-</div>
+  
   
 
   
 </template>
 
 <script>
-import axios from 'axios';
-import petService from '../services/PetService';
-import PetService from '../services/PetService';
-
 export default {
-  name: "pets",
-  component: {},
+    name: "cats",
 
-    data() {
-    return {
-      petList:[],
-      pets: {
-        petName: '',
-        species: '',
-        sex: '',
-        age: '',
-        isSpayedNeutered: '',
-        description: '',
-        picture: '',
-        isAdopted: false
-      },
-
-      registrationErrors: false,
-      registrationErrorMsg: 'The form could not be sumbitted.',
-      invalidCredentials: false
-    };
-    },
-
-  created() {
-    
-      PetService.getPets()
-          .then ( (response) => {
-          this.petList = response.data;
-      });
-    
-        
-  },
-  methods: {
-    displayPets(){
-      petService.displayPets()
-      axios.get(`/`)
-      .then ( (response) => {
-          this.petList = response.data
-      });
-    },
-    }
-
-};
-    
+}
 </script>
 
-
 <style scoped>
-
-#app > div.home {
+#cats {
 	justify-content: center;
-  padding-top:5px;
+    padding-top:5px;
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-  border-radius:20px;
+    border-radius:20px;
 }
 div.main {
   
 }
-
 .container {
   display:flex;
   flex-direction: row;
@@ -272,8 +128,7 @@ div.main {
   margin-right:80px;
   margin-left:80px;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 2.5px 10px 25px #000
+  border-radius:20px;
 }
 h1 {
   color: white;
@@ -312,7 +167,7 @@ p {
 
 .content {
   position: relative;
-  
+  width: 90%;
   width: 400px;
   height:400px;
   /* margin: auto; */
@@ -344,13 +199,9 @@ p {
 
 .content-image{
   width: 100%;
-  height: 100%;
+  height: 400px;
 }
 
-img{
-  height: 100px;
-  width: 50px;
-}
 .content-details {
   position: absolute;
   text-align: center;

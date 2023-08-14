@@ -19,7 +19,7 @@
         {{ registrationErrorMsg }}
       </div>
       <div class="form-input-group"> 
-        <input type="text" id="Name" v-model="newVolunteer.fullName" placeholder="Full Name" required autofocus />
+        <input type="text" id="Name" v-model="newVolunteer.name" placeholder="Full Name" required autofocus />
       </div>
       <div class="form-input-group">
         <input type="number" id="age" v-model="newVolunteer.age" placeholder="Age" required />
@@ -75,7 +75,7 @@ export default {
     return {
       volunteerList:[],
       newVolunteer: {
-        fullName: '',
+        name: '',
         age: '',
         phoneNumber: '',
         address: '',
@@ -91,7 +91,6 @@ export default {
       registrationErrorMsg: 'The form could not be sumbitted.',
       invalidCredentials: false
     };
-    
   },
 
   created() {
@@ -168,7 +167,8 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background-color:white;
+  justify-content: center;
   padding-top:5px;
   border-radius:20px;
   
@@ -189,7 +189,7 @@ body{
 
 }
 div.main {
-  background: linear-gradient(to bottom, #3225a3, #221a6b, #161142);
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
   margin-top: 0%;
   margin-top:0px;
   
