@@ -38,7 +38,7 @@
   </div>     
       </div>
     <!-- Volunteer list goes here -->
-    <div class="volunteerList" v-if="!this.hideForm()">
+    <div class="volunteerList" v-if="this.showVolunteer()">
       <table>
         <tr id="vList">
           <th>Name</th>&nbsp;&nbsp;
@@ -52,6 +52,32 @@
         </tr>
       </table>
     </div>
+
+    <div class="volunteerList" v-if="this.showAdmin()">
+      <table>
+        <tr id="vList">
+          <th>Name</th>&nbsp;&nbsp;
+          <th>Phone Number</th>&nbsp;&nbsp;
+          <th>Active</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Change Status</th>
+          <th>Delete</th>
+        </tr>
+        <tr id="vList" v-for="volunteer in volunteerList" v-bind:key="volunteer.id">
+          <td>{{volunteer.fullName}}</td>&nbsp;&nbsp;
+          <td>{{volunteer.phoneNumber}}</td>&nbsp;&nbsp;
+          <td>{{volunteer.isActive}}</td>
+          <td>{{volunteer.address}}</td>
+          <td>{{volunteer.email}}</td>
+          <td>{{volunteer.age}}</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
 	</div>
 </body>
 
@@ -132,10 +158,23 @@ export default {
     },
 
     hideForm() {
-      if (this.$store.state.user.authorities[0].name !== 'ROLE_ADMIN' && this.$store.state.user.authorities[0].name !== 'volunteer'){
+      if (this.$store.state.user.authorities[0].name !== 'ROLE_ADMIN' && this.$store.state.user.authorities[0].name !== 'ROLE_volunteer'){
+        return true
+      }
+    },
+
+    showAdmin() {
+      if (this.$store.state.user.authorities[0].name === 'ROLE_ADMIN'){
+        return true
+      }
+    },
+
+    showVolunteer() {
+      if (this.$store.state.user.authorities[0].name === 'ROLE_volunteer'){
         return true
       }
     }
+
     
   }
 };
@@ -167,7 +206,8 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background-color:white;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    border-radius:20px;
   justify-content: center;
   padding-top:5px;
   border-radius:20px;
@@ -177,7 +217,7 @@ body{
   font-family: "Jost";
 }
 .main{
-  width: 500px;
+  width: 850px;
 	height: 600px;
   margin-bottom: 100px;
 	background: red;
