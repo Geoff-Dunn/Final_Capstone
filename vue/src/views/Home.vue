@@ -77,12 +77,9 @@
     <!-- </a> -->
   </div>
 
+</div>
 
-<!-- <div style="display: flex;" class="buttons">
-  <button type="button">Dogs for Adoption</button>
-  <button type="button">Cats for Adoption</button>
-  <button type="button">Rabbits for Adoption</button>
-</div> -->
+
 
 <h3 class="title" id="rabbitsection">Rabbits for Adoption</h3>
 <div class="container">  
@@ -191,7 +188,8 @@
   </div>
 </div>
 </div>
-  </div>
+
+  
   
 
   
@@ -282,6 +280,7 @@ div.main {
   border-radius: 10px;
   box-shadow: 2.5px 10px 25px #000
 }
+
 h1 {
   color: white;
   text-align: center;
@@ -358,6 +357,7 @@ img{
   height: 100px;
   width: 50px;
 }
+
 .content-details {
   position: absolute;
   text-align: center;

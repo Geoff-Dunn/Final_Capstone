@@ -149,7 +149,7 @@ li.dropdown {
 }
 
 .dropdown-content a:hover {
-  background-color: #d16602;
+  /* background-color: #d16602; */
 
   
   }
