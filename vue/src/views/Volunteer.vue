@@ -1,6 +1,5 @@
 <template>
   <div id="volunteer">
-    <form v-on:submit.prevent="volunteerSubmit">
 
     <head>
 	<title>Slide Navbar</title>
@@ -12,6 +11,7 @@
 			<div class="volunteerform" v-if="this.hideForm()">
 			
       <div id="form" class="text-center">
+
     <form v-on:submit.prevent="submitForm">
       <!-- <h2  v-if="$store.state.user.authorities[0].name === 'ROLE_ADMIN'">You are an admin!</h2> -->
       <label for="chk" aria-hidden="true">Volunteer Signup</label>
@@ -35,6 +35,7 @@
       </div>
       <button type="submit" >Submit</button> 
     </form>
+
   </div>     
       </div>
     <!-- Volunteer list goes here -->
@@ -74,15 +75,14 @@
           <td>{{volunteer.email}}</td>&nbsp;&nbsp;
           <td>{{volunteer.age}}</td>
           <td><button type="activate">Activate</button></td>
-          <!-- <td></td>
-          <td></td> -->
+       
         </tr>
       </table>
     </div>
 
 	</div>
 </body>
-    </form>
+   
   </div>
 
 </template>
@@ -120,25 +120,24 @@ export default {
   },
 
   created() {
-    
       VolunteerService.getVolunteers()
-          .then ( (response) => {
+          .then ((response) => {
           this.volunteerList = response.data;
       });
   },
   methods: {
     submitForm() {
+      this.newVolunteer.fullName = this.newVolunteer.name;
       volunteerService
         .volunteerSubmission(this.newVolunteer)
-        axios.post('/volunteer', this.newVolunteer)
-        .then(response => {
+        // axios.post('/volunteer', this.newVolunteer)
+        .then((response) => {
           if (response.status == 201) {
             alert("Volunteer Form Sumbitted Sucessfully!")
           }
         })
         .catch(error => {
           const response = error.response;
-
           if (response.status === 401) {
             this.invalidCredentials = true;
           }
