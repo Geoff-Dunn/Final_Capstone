@@ -206,6 +206,14 @@ export default {
 #label{
   font-size:22px;
 }
+#form > form > button {
+  width: 250px;
+}
+#form > form > div {
+  margin:auto;
+  
+  width:500px
+}
 .form-input-group {
   margin-bottom: 1rem;
 }
