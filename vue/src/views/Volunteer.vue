@@ -13,7 +13,7 @@
       <div id="form" class="text-center">
 
     <form v-on:submit.prevent="submitForm">
-      <!-- <h2  v-if="$store.state.user.authorities[0].name === 'ROLE_ADMIN'">You are an admin!</h2> -->
+      
       <label for="chk" aria-hidden="true">Volunteer Signup</label>
       <div role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
