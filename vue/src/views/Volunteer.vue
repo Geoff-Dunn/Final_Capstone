@@ -13,7 +13,7 @@
       <div id="form" class="text-center">
 
     <form v-on:submit.prevent="submitForm">
-      <!-- <h2  v-if="$store.state.user.authorities[0].name === 'ROLE_ADMIN'">You are an admin!</h2> -->
+      
       <label for="chk" aria-hidden="true">Volunteer Signup</label>
       <div role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
@@ -49,8 +49,10 @@
         <tr id="vList" v-for="volunteer in volunteerList" v-bind:key="volunteer.id">
           <td>{{volunteer.fullName}}</td>&nbsp;&nbsp;
           <td>{{volunteer.phoneNumber}}</td>&nbsp;&nbsp;
-          <td>{{volunteer.isActive}}</td>
-          <button type="activate">Activate</button>
+          <td>{{volunteer.isActive}}</td>&nbsp;&nbsp;
+          <td>
+            <button class="btnActivateDeactivate" v-on:click="toggleStatus(volunteer)">{{volunteer.isActive === "Active" ? "Deactivate" : "Activate" }}</button>
+          </td>&nbsp;&nbsp;
         </tr>
       </table>
     </div>
@@ -64,7 +66,7 @@
           <th id="label">Address</th>&nbsp;&nbsp;
           <th id="label">Email</th>&nbsp;&nbsp;
           <th id="label">Age</th>&nbsp;&nbsp;
-          <th id="label">Change Status</th>
+          <th id="label">Change Status</th>&nbsp;&nbsp;
           <th id="label">Delete</th>
         </tr>
         <tr id="vList" v-for="volunteer in volunteerList" v-bind:key="volunteer.id">
@@ -73,8 +75,11 @@
           <td>{{volunteer.isActive}}</td>&nbsp;&nbsp;
           <td>{{volunteer.address}}</td>&nbsp;&nbsp;
           <td>{{volunteer.email}}</td>&nbsp;&nbsp;
-          <td>{{volunteer.age}}</td>
-          <td><button type="activate">Activate</button></td>
+          <td>{{volunteer.age}}</td>&nbsp;&nbsp;
+          <td>
+            <button class="btnActivateDeactivate" v-on:click="toggleStatus(volunteer)">{{volunteer.isActive === "Active" ? "Deactivate" : "Activate" }}</button>
+          </td>&nbsp;&nbsp;
+          <td><button v-on:click= "deleteVolunteer">Delete</button></td>
        
         </tr>
       </table>
@@ -183,7 +188,16 @@ export default {
       this.newVolunteer.address='',
       this.newVolunteer.email=''
    }
-	} 
+	},
+  toggleStatus(volunteer){
+      if (volunteer.isActive === "Active"){
+        volunteer.isActive = "Inactive"
+      }
+      else {volunteer.isActive = "Active"}
+    },
+    deleteVolunteer(){
+      
+    }
 };
 </script>
 
@@ -215,7 +229,7 @@ th td{
 }
 
 button{
-	width: 60%;
+	width: 90%;
 	height: 40px;
 	margin: 10px auto;
 	justify-content: center;
