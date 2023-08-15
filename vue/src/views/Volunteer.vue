@@ -76,17 +76,11 @@
           <td>{{volunteer.isActive}}</td>&nbsp;&nbsp;
           <td>{{volunteer.address}}</td>&nbsp;&nbsp;
           <td>{{volunteer.email}}</td>&nbsp;&nbsp;
-<<<<<<< HEAD
           <td>{{volunteer.age}}</td>&nbsp;&nbsp;
           <td>
             <button class="btnActivateDeactivate" v-on:click="toggleStatus(volunteer)">{{volunteer.isActive === "Active" ? "Deactivate" : "Activate" }}</button>
           </td>&nbsp;&nbsp;
           <td><button id="warning" v-on:click= "deleteUsers">Delete</button></td>
-=======
-          <td>{{volunteer.age}}</td>
-          <td><button type="activate">Activate</button></td>
-       
->>>>>>> 9a41f82c606f4522e8ea03c70c119b4ce1ddd55b
         </tr>
       </table>
     </div>
