@@ -182,15 +182,7 @@ export default {
         return true
       }
     },
-    resetForm() {
-      this.newVolunteer.name = '',
-      this.newVolunteer.age ='',
-      this.newVolunteer.phoneNumber='',
-      this.newVolunteer.address='',
-      this.newVolunteer.email=''
-   }
-	},
-  toggleStatus(volunteer){
+    toggleStatus(volunteer){
       if (volunteer.isActive === "Active"){
         volunteer.isActive = "Inactive"
       }
@@ -198,7 +190,16 @@ export default {
     },
     deleteVolunteer(){
 
-    }
+    },
+    resetForm() {
+      this.newVolunteer.name = '',
+      this.newVolunteer.age ='',
+      this.newVolunteer.phoneNumber='',
+      this.newVolunteer.address='',
+      this.newVolunteer.email=''
+   },
+	},
+    
 };
 </script>
 
