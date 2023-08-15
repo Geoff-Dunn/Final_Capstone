@@ -64,7 +64,7 @@ const router = new Router({
       name: "volunteer",
       component: Volunteer,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -75,14 +75,14 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    {
-      path: "/volunteersignup",
-      name: "signup",
-      component: Volunteer,
-      meta: {
-        requiresAuth: true
-      }
-    },
+    // {
+    //   path: "/volunteersignup",
+    //   name: "signup",
+    //   component: Volunteer,
+    //   meta: {
+    //     requiresAuth: false
+    //   }
+    // },
     {
       path: "/cats",
       name: "cats",
