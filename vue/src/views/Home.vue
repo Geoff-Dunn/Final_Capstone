@@ -13,10 +13,29 @@
         <p class="content-text">{{pets.sex}}</p>
       </div>
   </div>
+<div class="container">
+    <div class="content">
+     <div class="content-overlay"></div>
+        <img class="content-image" src="..\public\uploadingimg.png">
+      <div class="content-details fadeIn-bottom">
+  <form>
+        <p for ="petName" class="content-title"> Pets Name: </p>
+        <input type="text" class="content-text">>
+
+        <p for ="petDescription" class="content-title"> Description:</p> 
+        <input for ="text" class="content-title">> 
+        
+        <label for ="petAge" class="content-title"> Age: </label> 
+        <input type="text" class="content-text">
+        
+        <label for ="petSex" class="content-title"> Pets Gender: </label> 
+        <input type="text" class="content-text">
+</form>
+  </div>
   </div>
 </div>
-
-
+  </div>
+</div>
   
 </template>
 
