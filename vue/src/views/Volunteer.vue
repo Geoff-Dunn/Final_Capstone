@@ -141,7 +141,7 @@ export default {
         .then((response) => {
           if (response.status == 201) {
             this.resetForm()
-            alert("Volunteer Form Sumbitted Sucessfully!")
+            alert("Volunteer Form Submitted Succesfully!")
             
           }
         })

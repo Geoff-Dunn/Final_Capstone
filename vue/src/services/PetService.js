@@ -19,7 +19,7 @@ export default {
   },
 
   addPet(pet) {
-    return http.post('/pets', pet);
+    return http.post('/', pet);
   },
 
   updatePet(pet) {

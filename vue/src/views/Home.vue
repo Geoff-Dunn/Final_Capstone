@@ -18,18 +18,28 @@
      <div class="content-overlay"></div>
         <img class="content-image" src="..\public\uploadingimg.png">
       <div class="content-details fadeIn-bottom">
-  <form>
-        <p for ="petName" class="content-title"> Pets Name: </p>
-        <input type="text" class="content-text">>
+  
+      <form v-on:submit.prevent="submitForm">
+        <p for ="petName" class="new-content-title">Add A Pet</p>
+        <input type="text" id="name" v-model="pets.petName" placeholder="Name" required />
 
-        <p for ="petDescription" class="content-title"> Description:</p> 
-        <input for ="text" class="content-title">> 
+        <p for ="petDescription" class="new-content-title"></p> 
+        <input for ="text" id="description" v-model="pets.description" placeholder="Description" required />
         
-        <label for ="petAge" class="content-title"> Age: </label> 
-        <input type="text" class="content-text">
+        <label for ="petAge" class="new-content-title"></label> 
+        <input type="text" id="age" v-model="pets.age" placeholder="Age" required />
         
-        <label for ="petSex" class="content-title"> Pets Gender: </label> 
-        <input type="text" class="content-text">
+        <label for ="petSex" class="new-content-title" ></label> 
+        <input type="text" id="gender" v-model="pets.sex" placeholder="Gender" required />
+
+        <label for ="petSpecies" class="new-content-title"></label> 
+        <input type="text" id="species" v-model="pets.species" placeholder="Species" required />
+
+         <label for ="petUrl" class="new-content-title"></label> 
+        <input type="text" id="url" v-model="pets.picture" placeholder="Picture Url" required />
+        <button type="submit" >Submit</button> 
+
+
 </form>
   </div>
   </div>
@@ -96,9 +106,37 @@ export default {
           
       });
     },
-    }
-  
-
+    submitForm() {
+      petService
+        .addPet(this.pets)
+        .then((response) => {
+          if (response.status == 201) {
+            this.resetForm()
+            alert("Pet Sucessfully Added!")
+            
+          }
+        })
+        .catch(error => {
+          const response = error.response;
+          if (response.status === 401) {
+            this.invalidCredentials = true;
+          }
+        });
+    },
+    clearErrors() {
+      this.registrationErrors = false;
+      this.registrationErrorMsg = 'There were problems registering this user.';
+    },
+    resetForm() {
+      this.pets.name = '',
+      this.pets.age ='',
+      this.pets.sex='',
+      this.pets.species='',
+      this.pets.picture='',
+      this.pets.description=''
+   },
+	},
+    
 };
     
 </script>
