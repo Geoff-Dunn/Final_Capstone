@@ -5,17 +5,13 @@ const http = axios.create({
 });
 
 export default {
-
     volunteerSubmission(user) {
       return http.post('/volunteer', user)
     },
-
     getVolunteers(){
       return http.get('/volunteer');
     },
     updateVolunteer() {
       return http.put('/volunteer')
     },
-
-
   }

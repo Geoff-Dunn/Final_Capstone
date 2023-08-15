@@ -1,6 +1,5 @@
 <template>
   <div id="volunteer">
-    <form v-on:submit.prevent="volunteerSubmit">
 
     <head>
 	<title>Slide Navbar</title>
@@ -12,6 +11,7 @@
 			<div class="volunteerform" v-if="this.hideForm()">
 			
       <div id="form" class="text-center">
+
     <form v-on:submit.prevent="submitForm">
       <!-- <h2  v-if="$store.state.user.authorities[0].name === 'ROLE_ADMIN'">You are an admin!</h2> -->
       <label for="chk" aria-hidden="true">Volunteer Signup</label>
@@ -35,6 +35,7 @@
       </div>
       <button type="submit" >Submit</button> 
     </form>
+
   </div>     
       </div>
     <!-- Volunteer list goes here -->
@@ -75,18 +76,24 @@
           <td>{{volunteer.isActive}}</td>&nbsp;&nbsp;
           <td>{{volunteer.address}}</td>&nbsp;&nbsp;
           <td>{{volunteer.email}}</td>&nbsp;&nbsp;
+<<<<<<< HEAD
           <td>{{volunteer.age}}</td>&nbsp;&nbsp;
           <td>
             <button class="btnActivateDeactivate" v-on:click="toggleStatus(volunteer)">{{volunteer.isActive === "Active" ? "Deactivate" : "Activate" }}</button>
           </td>&nbsp;&nbsp;
           <td><button id="warning" v-on:click= "deleteUsers">Delete</button></td>
+=======
+          <td>{{volunteer.age}}</td>
+          <td><button type="activate">Activate</button></td>
+       
+>>>>>>> 9a41f82c606f4522e8ea03c70c119b4ce1ddd55b
         </tr>
       </table>
     </div>
 
 	</div>
 </body>
-    </form>
+   
   </div>
 
 </template>
@@ -124,25 +131,24 @@ export default {
   },
 
   created() {
-    
       VolunteerService.getVolunteers()
-          .then ( (response) => {
+          .then ((response) => {
           this.volunteerList = response.data;
       });
   },
   methods: {
     submitForm() {
+      this.newVolunteer.fullName = this.newVolunteer.name;
       volunteerService
         .volunteerSubmission(this.newVolunteer)
-        axios.post('/volunteer', this.newVolunteer)
-        .then(response => {
+        // axios.post('/volunteer', this.newVolunteer)
+        .then((response) => {
           if (response.status == 201) {
             alert("Volunteer Form Submitted Sucessfully!")
           }
         })
         .catch(error => {
           const response = error.response;
-
           if (response.status === 401) {
             this.invalidCredentials = true;
           }
