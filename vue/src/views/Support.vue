@@ -1,7 +1,7 @@
 <template>
 <div id="cats">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-<h3 class="title"  id="allpets">Pets Found Their Forever Home</h3>
+<h3 class="title"  id="allpets">Pets Who Found Their Forever Home</h3>
 <div class="container">  
   <div class="content" v-for="pets in filteredSpecies" :key="pets.id" > 
       <div class="content-overlay"></div>
