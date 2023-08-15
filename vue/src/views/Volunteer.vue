@@ -44,13 +44,16 @@
         <tr id="vList">
           <th>Name</th>&nbsp;&nbsp;
           <th>Phone Number</th>&nbsp;&nbsp;
-          <th>Active</th>
+          <th>Active</th>&nbsp;&nbsp;
+          <th>Change Status</th>
         </tr>
         <tr id="vList" v-for="volunteer in volunteerList" v-bind:key="volunteer.id">
           <td>{{volunteer.fullName}}</td>&nbsp;&nbsp;
           <td>{{volunteer.phoneNumber}}</td>&nbsp;&nbsp;
-          <td>{{volunteer.isActive}}</td>
-          <button type="activate">Activate</button>
+          <td>{{volunteer.isActive}}</td>&nbsp;&nbsp;
+          <td>
+            <button class="btnActivateDeactivate" v-on:click="toggleStatus(volunteer)">{{volunteer.isActive === "Active" ? "Deactivate" : "Activate" }}</button>
+          </td>
         </tr>
       </table>
     </div>
@@ -64,7 +67,7 @@
           <th id="label">Address</th>&nbsp;&nbsp;
           <th id="label">Email</th>&nbsp;&nbsp;
           <th id="label">Age</th>&nbsp;&nbsp;
-          <th id="label">Change Status</th>
+          <th id="label">Change Status</th>&nbsp;&nbsp;
           <th id="label">Delete</th>
         </tr>
         <tr id="vList" v-for="volunteer in volunteerList" v-bind:key="volunteer.id">
@@ -73,9 +76,11 @@
           <td>{{volunteer.isActive}}</td>&nbsp;&nbsp;
           <td>{{volunteer.address}}</td>&nbsp;&nbsp;
           <td>{{volunteer.email}}</td>&nbsp;&nbsp;
-          <td>{{volunteer.age}}</td>
-          <td><button type="activate">Activate</button></td>
-       
+          <td>{{volunteer.age}}</td>&nbsp;&nbsp;
+          <td>
+            <button class="btnActivateDeactivate" v-on:click="toggleStatus(volunteer)">{{volunteer.isActive === "Active" ? "Deactivate" : "Activate" }}</button>
+          </td>&nbsp;&nbsp;
+          <td><button id="warning" v-on:click= "deleteUsers">Delete</button></td>
         </tr>
       </table>
     </div>
@@ -133,7 +138,7 @@ export default {
         // axios.post('/volunteer', this.newVolunteer)
         .then((response) => {
           if (response.status == 201) {
-            alert("Volunteer Form Sumbitted Sucessfully!")
+            alert("Volunteer Form Submitted Sucessfully!")
           }
         })
         .catch(error => {
@@ -172,7 +177,13 @@ export default {
       if (this.$store.state.user.authorities[0].name === 'ROLE_volunteer'){
         return true
       }
-    }
+    },
+    toggleStatus(volunteer){
+      if (volunteer.isActive === "Active"){
+        volunteer.isActive = "Inactive"
+      }
+      else {volunteer.isActive = "Active"}
+    },
 
     
   }
@@ -207,7 +218,7 @@ th td{
 }
 
 button{
-	width: 60%;
+	width: 90%;
 	height: 40px;
 	margin: 10px auto;
 	justify-content: center;
@@ -225,6 +236,9 @@ button{
 }
 button:hover{
 	background: #444cb8;
+}
+#warning:hover {
+  background: rgb(231, 10, 10);
 }
 
 /* ///// */
