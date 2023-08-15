@@ -44,7 +44,8 @@
         <tr id="vList">
           <th>Name</th>&nbsp;&nbsp;
           <th>Phone Number</th>&nbsp;&nbsp;
-          <th>Active</th>
+          <th>Active</th>&nbsp;&nbsp;
+          <th id="label">Change Status</th>
         </tr>
         <tr id="vList" v-for="volunteer in volunteerList" v-bind:key="volunteer.id">
           <td>{{volunteer.fullName}}</td>&nbsp;&nbsp;
@@ -79,7 +80,7 @@
           <td>
             <button class="btnActivateDeactivate" v-on:click="toggleStatus(volunteer)">{{volunteer.isActive === "Active" ? "Deactivate" : "Activate" }}</button>
           </td>&nbsp;&nbsp;
-          <td><button v-on:click= "deleteVolunteer">Delete</button></td>
+          <td><button>Delete</button></td>
        
         </tr>
       </table>
@@ -165,19 +166,19 @@ export default {
     },
 
     hideForm() {
-      if (this.$store.state.user.authorities[0].name !== 'ROLE_ADMIN' && this.$store.state.user.authorities[0].name !== 'ROLE_volunteer'){
+      if (this.$store.state.token === "" || this.$store.state.user.authorities[0].name !== 'ROLE_ADMIN' && this.$store.state.user.authorities[0].name !== 'ROLE_volunteer'){
         return true
-      }
+      }else {return false}
     },
 
     showAdmin() {
-      if (this.$store.state.user.authorities[0].name === 'ROLE_ADMIN'){
+      if (this.$store.state.token !== "" && this.$store.state.user.authorities[0].name === 'ROLE_ADMIN'){
         return true
       }
     },
 
     showVolunteer() {
-      if (this.$store.state.user.authorities[0].name === 'ROLE_volunteer'){
+      if (this.$store.state.token !== "" && this.$store.state.user.authorities[0].name === 'ROLE_volunteer'){
         return true
       }
     },
@@ -196,7 +197,7 @@ export default {
       else {volunteer.isActive = "Active"}
     },
     deleteVolunteer(){
-      
+
     }
 };
 </script>
