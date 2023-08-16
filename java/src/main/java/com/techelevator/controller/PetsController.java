@@ -66,10 +66,10 @@ public class PetsController {
     }
 //...........................................................................
 
-
+    @CrossOrigin
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @RequestMapping(path = "/", method = RequestMethod.DELETE)
-    public void deletePet(@PathVariable int petId) {
+    @RequestMapping(path = "/{petId}", method = RequestMethod.DELETE)
+    public void deletePet(@Valid @PathVariable  int petId) {
         try {
             int petDeleted = PetsDao.deletePetById(petId);
             if (petDeleted == 0) {

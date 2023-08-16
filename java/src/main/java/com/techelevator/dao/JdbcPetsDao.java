@@ -65,17 +65,17 @@ public class JdbcPetsDao implements PetsDao {
 
     @Override
     public int deletePetById(int petId) {
-        int number=0;
+        int result=0;
         String sql = "DELETE FROM pets WHERE pet_id = ?;";
 
         try {
-            number = jdbcTemplate.update(sql, petId);
+            result = jdbcTemplate.update(sql, petId);
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database", e);
         } catch (DataIntegrityViolationException e) {
             throw new DaoException("Data integrity violation", e);
         }
-        return number;
+        return result;
     }
 //...........................................................................
 

@@ -17,6 +17,9 @@ public class PetsDto {
         return petId;
     }
 
+    public void setPetId(int petId) {
+        this.petId = petId;
+    }
 
     public boolean getIsSpayedNeutered() {
         return isSpayedNeutered;
