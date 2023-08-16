@@ -11,7 +11,7 @@ export default {
     getVolunteers(){
       return http.get('/volunteer');
     },
-    updateVolunteer() {
-      return http.put('/volunteer')
+    updateVolunteer(isActive,volunteer) {
+      return http.put(`/volunteer/$`,volunteer)
     },
   }

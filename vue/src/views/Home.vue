@@ -1,5 +1,5 @@
 <template>
-<div id="cats">
+<div id="home">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <h3 class="title"  id="allpets">Pets for Adoption</h3>
 <div class="container">  
@@ -11,12 +11,15 @@
         <p class="content-text">{{pets.description}}</p>
         <p class="content-text">{{pets.age}}</p>
         <p class="content-text">{{pets.sex}}</p>
+        <button v-on:click="updatePet">Edit Pet</button>
+        <button v-on:click="deletePet">Delete Pet</button>
+
       </div>
   </div>
 <div class="container">
     <div class="content">
      <div class="content-overlay"></div>
-        <img class="content-image" src="..\public\uploadingimg.png">
+        <img class="content-image" src="..\public\logo-png.png">
       <div class="content-details fadeIn-bottom">
   
       <form v-on:submit.prevent="submitForm">
@@ -37,6 +40,9 @@
 
          <label for ="petUrl" class="new-content-title"></label> 
         <input type="text" id="url" v-model="pets.picture" placeholder="Picture Url" required />
+
+        <label for ="Status" class="new-content-title"></label> 
+        <input type="text" id="url" v-model="pets.isAdopted" placeholder="Adopted? true/false" required />
         <button type="submit" >Submit</button> 
 
 
@@ -63,6 +69,7 @@ export default {
       filteredSpecies:[],
       petList:[],
       pets: {
+        pet_id: '',
         petName: '',
         species: '',
         sex: '',
@@ -86,17 +93,11 @@ export default {
           const filteredSpecies=this.petList.filter(pets => !pets.adopted);
           this.filteredSpecies= filteredSpecies;
       });
-      
-
-      
-        
   },
 
   computed: {
     getPetPicture() {return require(this.pets.picture);}
   },
-
-
   methods: {
     displayPets(){
       petService.displayPets()
@@ -106,6 +107,9 @@ export default {
           
       });
     },
+  
+    
+  
     submitForm() {
       petService
         .addPet(this.pets)
@@ -113,6 +117,7 @@ export default {
           if (response.status == 201) {
             this.resetForm()
             alert("Pet Sucessfully Added!")
+            location.reload()
             
           }
         })
@@ -135,7 +140,27 @@ export default {
       this.pets.picture='',
       this.pets.description=''
    },
+   deletePet() {
+     if ( confirm("Are you sure you want to delete this pet"))
+     PetService.deletePet(this.pets.pet_id)
+     .then(response => {
+       if (response.status === 200) {
+         alert("Pet successfully deleted");
+         this.$router.push(`/${this.pets.pet_id}`)
+       }
+     })
+     }
 	},
+    updatePet() {
+      PetService.updatePet(this.pets.pet_id)
+      .then(response => {
+       if (response.status === 200) {
+         alert("Pet successfully selected");
+       }
+      })
+      
+  }
+
     
 };
     
@@ -143,7 +168,7 @@ export default {
 
 
 <style scoped>
-#cats {
+#home {
 	justify-content: center;
     padding-top:5px;
 	align-items: center;
@@ -292,5 +317,8 @@ p.content-title{
 
 p.content-text{
   font-size: 20px;
+}
+#home > div > div.container > div > div.content-details.fadeIn-bottom > form > p:nth-child(1) {
+  font-size:35px;
 }
 </style>
