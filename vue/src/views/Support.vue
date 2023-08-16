@@ -13,6 +13,7 @@
         <p class="content-text">{{pets.sex}}</p>
       </div>
   </div>
+  </div>
   <footer> 
     <body>
 
@@ -22,7 +23,6 @@
 
 </body>
   </footer>
-  </div>
 </div>
 
 
@@ -106,6 +106,10 @@ export default {
 }
 div.main {
   
+}
+footer {
+  display:flex;
+  justify-content: center;
 }
 .container {
   display:flex;
