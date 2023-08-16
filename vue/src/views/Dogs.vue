@@ -1,5 +1,5 @@
 <template>
-<div id="cats">
+<div id="dogs">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <h3 class="title"  id="allpets">Dogs for Adoption</h3>
 <div class="container">  
@@ -86,7 +86,7 @@ export default {
 
 
 <style scoped>
-#cats {
+#dogs {
 	justify-content: center;
     padding-top:5px;
 	align-items: center;

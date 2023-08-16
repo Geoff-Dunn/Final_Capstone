@@ -37,13 +37,10 @@ public class Pets {
         return isAdopted;
     }
 
-    public boolean isSpayedNeutered() {
-        return isSpayedNeutered;
-    }
-
     public String getAge() {
         return age;
     }
+
 
     public String getDescription() {
         return description;
@@ -105,6 +102,13 @@ public class Pets {
         this.petId = petId;
     }
 
+    public boolean getIsSpayedNeutered() {
+        return isSpayedNeutered;
+    }
+
+    public boolean getisAdopted() {
+        return isAdopted;
+    }
 }
 
 

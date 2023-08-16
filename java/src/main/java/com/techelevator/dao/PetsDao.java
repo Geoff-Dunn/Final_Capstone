@@ -18,4 +18,6 @@ public interface PetsDao {
 
     List<Pets> getAllAdoptedPets();
 
+    int deletePetById(int id);
+
 }

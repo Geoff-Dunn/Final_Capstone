@@ -35,20 +35,15 @@ public class PetsController {
         List<Pets> pets = PetsDao.getAllPets();
         return pets;
     }
-//...........................................................................
-
-//    @CrossOrigin
-//    @RequestMapping(value = "/cats", method = RequestMethod.GET)
-//    public List<Pets> cats = PetsDao.getPetsBySpecies()
 
 
 //...........................................................................
-
+    @CrossOrigin
     @RequestMapping(value = "/", method = RequestMethod.PUT)
-    public Pets updatePets(@Valid @RequestBody Pets updatePets, @PathVariable int id) {
-        updatePets.setPetId(id);
+    public Pets updatePets(@Valid @RequestBody Pets updatePets) {
+        updatePets.getPetId();
         try {
-            Pets updated = PetsDao.updatePets(id);
+            Pets updated = PetsDao.updatePets(updatePets);
             return updated;
         }
         catch (DaoException ex) {
@@ -57,7 +52,7 @@ public class PetsController {
     }
 
 //...........................................................................
-
+    @CrossOrigin
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/", method = RequestMethod.POST)
     public Pets createPets(@Valid @RequestBody PetsDto newpet) {
@@ -68,6 +63,21 @@ public class PetsController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Pet creation failed!");
         }
 
+    }
+//...........................................................................
+
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @RequestMapping(path = "/", method = RequestMethod.DELETE)
+    public void deletePet(@PathVariable int petId) {
+        try {
+            int petDeleted = PetsDao.deletePetById(petId);
+            if (petDeleted == 0) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            }
+        } catch (DaoException e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
 

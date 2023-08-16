@@ -3,6 +3,7 @@ package com.techelevator.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PetsDto {
+    private int petId;
     private String petName;
     private String species;
     private String sex;
@@ -12,7 +13,9 @@ public class PetsDto {
     private String picture;
     private boolean isAdopted;
 
-
+    public int getPetId() {
+        return petId;
+    }
 
 
     public boolean getIsSpayedNeutered() {
@@ -27,7 +30,7 @@ public class PetsDto {
         return isAdopted;
     }
 
-    public boolean isSpayedNeutered() {
+    public boolean sSpayedNeutered() {
         return isSpayedNeutered;
     }
 
@@ -81,6 +84,10 @@ public class PetsDto {
 
     public void setSpecies(String species) {
         this.species = species;
+    }
+
+    public boolean getisAdopted() {
+        return isAdopted;
     }
 
 //    public int getPetId() {

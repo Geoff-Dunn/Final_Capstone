@@ -22,20 +22,20 @@ export default {
     return http.post('/', pet);
   },
 
-  updatePet(pet) {
-    return http.put(`/Pets/${pet.id}`, pet);
+  updatePet(updatedpet) {
+    return axios.put('/',updatedpet);
   },
 
   deletePet(petID) {
-    return http.delete(`/pets/${petID}`);
+    return http.delete('/', petID);
   },
 
   addspecies(species) { 
     return http.post('/Species', species);
   },
 
-  deletespecies(speciesID) {
-    return http.delete(`/Species/${speciesID}`);
+  deletespecies(petID) {
+    return http.delete('/',petID);
   }
 
     
