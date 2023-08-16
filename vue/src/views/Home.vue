@@ -3,16 +3,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <h3 class="title"  id="allpets">Pets for Adoption</h3>
 <div class="container">  
-  <div class="content" v-for="pets in filteredSpecies" :key="pets.id" > 
+  <div class="content" v-for="pet in filteredSpecies" :key="pet.id" > 
       <div class="content-overlay"></div>
-        <img class="content-image" v-bind:src= "pets.picture">
+        <img class="content-image" v-bind:src= "pet.picture">
       <div class="content-details fadeIn-bottom">
-        <p class="content-title">{{pets.petName}}</p>
-        <p class="content-text">{{pets.description}}</p>
-        <p class="content-text">{{pets.age}}</p>
-        <p class="content-text">{{pets.sex}}</p>
-        <!-- <button v-on:click="updatePet">Edit Pet</button>
-        <button v-on:click="deletePet">Delete Pet</button> -->
+        <p class="content-title">{{pet.petName}}</p>
+        <p class="content-text">{{pet.description}}</p>
+        <p class="content-text">{{pet.age}}</p>
+        <p class="content-text">{{pet.sex}}</p>
+        <!-- <button v-on:click="updatePet()">Edit Pet</button> -->
+        <button v-on:click="deletePet(pet.petId)">Delete Pet</button>
+        
 
       </div>
   </div>
@@ -107,9 +108,7 @@ export default {
           
       });
     },
-  
-    
-  
+
     submitForm() {
       petService
         .addPet(this.pets)
@@ -132,6 +131,11 @@ export default {
       this.registrationErrors = false;
       this.registrationErrorMsg = 'There were problems registering this user.';
     },
+    showAdmin() {
+      if (this.$store.state.token !== "" && this.$store.state.user.authorities[0].name === 'ROLE_ADMIN' ||this.$store.state.user.authorities[0].name !== 'ROLE_volunteer'){
+        return true
+      }
+    },
     resetForm() {
       this.pets.name = '',
       this.pets.age ='',
@@ -140,17 +144,20 @@ export default {
       this.pets.picture='',
       this.pets.description=''
    },
-   deletePet() {
-     if ( confirm("Are you sure you want to delete this pet"))
-     PetService.deletePet(this.pets.pet_id)
+   deletePet(petId) {
+
+     if ( confirm("Are you sure you want to delete this pet")) {
+     PetService.deletePet(petId)
      .then(response => {
-       if (response.status === 200) {
+       if (response.status === 204) {
          alert("Pet successfully deleted");
-         this.$router.push(`/${this.pets.pet_id}`)
+        //  this.$router.push(`/`)
+         this.$router.go(0);
        }
      })
      }
-	},
+   },
+   
     updatePet() {
       PetService.updatePet(this.pets.pet_id)
       .then(response => {
@@ -159,6 +166,7 @@ export default {
        }
       })
       
+  }
   }
 
     

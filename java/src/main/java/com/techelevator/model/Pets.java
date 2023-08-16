@@ -13,7 +13,8 @@ public class Pets {
     private String picture;
     private boolean isAdopted;
 
-    public Pets(String petName, String species, String sex, String age, boolean isSpayedNeutered, String description, String picture, boolean isAdopted) {
+    public Pets(int petId, String petName, String species, String sex, String age, boolean isSpayedNeutered, String description, String picture, boolean isAdopted) {
+        this.petId = petId;
         this.petName = petName;
         this.species = species;
         this.sex = sex;
