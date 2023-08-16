@@ -11,8 +11,8 @@
         <p class="content-text">{{pets.description}}</p>
         <p class="content-text">{{pets.age}}</p>
         <p class="content-text">{{pets.sex}}</p>
-        <button v-on:click="updatePet">Edit Pet</button>
-        <button v-on:click="deletePet">Delete Pet</button>
+        <!-- <button v-on:click="updatePet">Edit Pet</button>
+        <button v-on:click="deletePet">Delete Pet</button> -->
 
       </div>
   </div>

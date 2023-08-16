@@ -25,9 +25,13 @@
       <img id="pawlogo" src="..\public\logo-png.png">
       <img id="catslogo" src="..\public\img\2.png">
     </div>
-    
     <router-view />
-  </div>
+
+    <footer>
+      <p>©Copyright 2023 All Rights Reserved "Paw Prints Pet Rescue"</p>
+    </footer>
+
+    </div>
 </template>
 
 <style scoped>
@@ -132,6 +136,10 @@ li.dropdown {
   display: block;
   
  
+}
+#app > footer > p {
+  display: flex;
+  justify-content: center;
 }
   
 </style>

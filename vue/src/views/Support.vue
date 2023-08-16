@@ -13,6 +13,15 @@
         <p class="content-text">{{pets.sex}}</p>
       </div>
   </div>
+  <footer> 
+    <body>
+
+<form action="https://clevelandapl.org/donate/make-a-donation/" method="get" target="_blank">
+         <button type="submit">Donate Now</button>
+      </form>
+
+</body>
+  </footer>
   </div>
 </div>
 
@@ -103,10 +112,27 @@ div.main {
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin-right:80px;
-  margin-left:80px;
+  margin-right:100px;
+  margin-left:100px;
   background-color: white;
   border-radius:20px;
+}
+body > form > button {
+  width: 80%;
+	height: 150px;
+  width: 300px;
+  margin-top: 100px;
+  margin-bottom: 150px;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #d16602;
+	font-size: 2em;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
 }
 h1 {
   color: white;
@@ -146,8 +172,8 @@ p {
 .content {
   position: relative;
   width: 90%;
-  width: 400px;
-  height:400px;
+  width: 250px;
+  height:250px;
   /* margin: auto; */
   margin-top: 20px;
   margin-bottom: 20px;
@@ -177,7 +203,7 @@ p {
 
 .content-image{
   width: 100%;
-  height: 400px;
+  height: 250px;
 }
 
 .content-details {
