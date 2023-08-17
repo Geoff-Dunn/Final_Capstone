@@ -68,7 +68,7 @@
           <th id="label">Email</th>&nbsp;&nbsp;
           <th id="label">Age</th>&nbsp;&nbsp;
           <th id="label">Change Status</th>&nbsp;&nbsp;
-          <th id="label">Delete</th>
+          <!-- <th id="label">Delete</th> -->
         </tr>
         <tr id="vList" v-for="volunteer in volunteerList" v-bind:key="volunteer.id">
           <td>{{volunteer.fullName}}</td>&nbsp;&nbsp;
@@ -80,7 +80,7 @@
           <td>
             <button class="btnActivateDeactivate" v-on:click="toggleStatus(volunteer)">{{volunteer.isActive === "Active" ? "Deactivate" : "Activate" }}</button>
           </td>&nbsp;&nbsp;
-          <td><button>Delete</button></td>
+          <!-- <td><button>Delete</button></td> -->
        
         </tr>
       </table>
