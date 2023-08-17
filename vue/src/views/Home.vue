@@ -12,7 +12,10 @@
         <p class="content-text">{{pets.age}}</p>
         <p class="content-text">{{pets.sex}}</p>
         <button v-on:click="fillForm(pets)">Edit Pet</button>
-        <button v-on:click="deletePet">Delete Pet</button>
+        <div class="deletePet">
+        <button v-on:click="deletePet(pets.petId)">Delete Pet</button>
+        </div>
+
 
       </div>
   </div>
@@ -146,7 +149,7 @@ export default {
 
   computed: {
     getPetPicture() {return require(this.pets.picture);}
-  },
+    },
   methods: {
     displayPets(){
       petService.displayPets()
@@ -168,7 +171,7 @@ export default {
          location.reload()
        }
       })      
-  },
+    },
     
   
     submitForm() {
@@ -193,6 +196,11 @@ export default {
       this.registrationErrors = false;
       this.registrationErrorMsg = 'There were problems registering this user.';
     },
+    showAdmin() {
+      if (this.$store.state.token !== "" && this.$store.state.user.authorities[0].name === 'ROLE_ADMIN' || this.$store.state.user.authorities[0].name !== 'ROLE_volunteer'){
+        return true
+      }
+    },
     resetForm() {
       this.pets.name = '',
       this.pets.age ='',
@@ -201,22 +209,20 @@ export default {
       this.pets.picture='',
       this.pets.description=''
    },
-   deletePet() {
-     if ( confirm("Are you sure you want to delete this pet"))
-     PetService.deletePet(this.pets.pet_id)
+   deletePet(petId) {
+
+     if ( confirm("Are you sure you want to delete this pet")) {
+     PetService.deletePet(petId)
      .then(response => {
-       if (response.status === 200) {
+       if (response.status === 204) {
          alert("Pet successfully deleted");
-         this.$router.push(`/${this.pets.pet_id}`)
+         location.reload()
        }
      })
-     }
+    }
 	},
-    
-
-    
-};
-    
+},
+}  
 </script>
 
 
@@ -230,9 +236,7 @@ export default {
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
     border-radius:20px;
 }
-div.main {
-  
-}
+
 .container {
   display:flex;
   flex-direction: row;

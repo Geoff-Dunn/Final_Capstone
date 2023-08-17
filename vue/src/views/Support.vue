@@ -104,9 +104,7 @@ export default {
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
     border-radius:20px;
 }
-div.main {
-  
-}
+
 footer {
   display:flex;
   justify-content: center;

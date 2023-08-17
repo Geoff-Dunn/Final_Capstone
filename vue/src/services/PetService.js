@@ -26,8 +26,8 @@ export default {
     return axios.put(`/`,updatedpet);
   },
 
-  deletePet(petID) {
-    return http.delete('/', petID);
+  deletePet(petId) {
+    return axios.delete(`/${petId}`);
   },
 
   addspecies(species) { 
