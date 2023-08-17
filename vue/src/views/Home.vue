@@ -11,12 +11,14 @@
         <p class="content-text">{{pets.description}}</p>
         <p class="content-text">{{pets.age}}</p>
         <p class="content-text">{{pets.sex}}</p>
-        <!-- <button v-on:click="updatePet">Edit Pet</button>
-        <button v-on:click="deletePet">Delete Pet</button> -->
+        <button v-on:click="fillForm(pets)">Edit Pet</button>
+        <button v-on:click="deletePet">Delete Pet</button>
 
       </div>
   </div>
+
 <div class="container">
+
     <div class="content">
      <div class="content-overlay"></div>
         <img class="content-image" src="..\public\logo-png.png">
@@ -49,7 +51,42 @@
 </form>
   </div>
   </div>
+
+  <div class="content" >
+     <div class="content-overlay"></div>
+        <img class="content-image" src="..\public\logo-png.png">
+      <div class="content-details fadeIn-bottom">
+  
+      <form v-on:submit.prevent="updatePet" >
+        <p for ="petName" class="new-content-title">Edit A Pet</p>
+        <input type="text" id="name" v-model="oldPet.petName" placeholder="Name" required />
+
+        <p for ="petDescription" class="new-content-title"></p> 
+        <input for ="text" id="description" v-model="oldPet.description" placeholder="Description" required />
+        
+        <label for ="petAge" class="new-content-title"></label> 
+        <input type="text" id="age" v-model="oldPet.age" placeholder="Age" required />
+        
+        <label for ="petSex" class="new-content-title" ></label> 
+        <input type="text" id="gender" v-model="oldPet.sex" placeholder="Gender" required />
+
+        <label for ="petSpecies" class="new-content-title"></label> 
+        <input type="text" id="species" v-model="oldPet.species" placeholder="Species" required />
+
+         <label for ="petUrl" class="new-content-title"></label> 
+        <input type="text" id="url" v-model="oldPet.picture" placeholder="Picture Url" required />
+
+        <label for ="Status" class="new-content-title"></label> 
+        <input type="text" id="url" v-model="oldPet.isAdopted" placeholder="Adopted? true/false" required />
+        <button type="submit" >Submit</button> 
+
+
+</form>
+  </div>
+  </div>
+
 </div>
+
   </div>
 </div>
   
@@ -79,6 +116,18 @@ export default {
         picture: '',
         isAdopted: false
       },
+      oldPet: {
+        pet_id: '',
+        petName: '',
+        species: '',
+        sex: '',
+        age: '',
+        isSpayedNeutered: '',
+        description: '',
+        picture: '',
+        isAdopted: false
+      },
+      currentPet:{},
 
       registrationErrors: false,
       registrationErrorMsg: 'The form could not be sumbitted.',
@@ -107,7 +156,19 @@ export default {
           
       });
     },
-  
+    fillForm(critter){
+      this.oldPet=critter;
+    },
+    updatePet() {
+      // this.pets=critter;
+      PetService.updatePet(this.oldPet)
+      .then(response => {
+       if (response.status === 200) {
+         alert("Pet successfully selected");
+         location.reload()
+       }
+      })      
+  },
     
   
     submitForm() {
@@ -151,15 +212,7 @@ export default {
      })
      }
 	},
-    updatePet() {
-      PetService.updatePet(this.pets.pet_id)
-      .then(response => {
-       if (response.status === 200) {
-         alert("Pet successfully selected");
-       }
-      })
-      
-  }
+    
 
     
 };

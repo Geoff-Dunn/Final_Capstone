@@ -42,9 +42,14 @@ public class JdbcPetsDao implements PetsDao {
     }
 
     @Override
-    public Pets updatePets(int petId) {
+    public Pets updatePets(PetsDto pet) {
         return null;
     }
+
+//    @Override
+//    public Pets updatePets() {
+//        return null;
+//    }
     //...........................................................................
 
 
@@ -84,7 +89,7 @@ public class JdbcPetsDao implements PetsDao {
         Pets updatedpet = null;
         String sql = "UPDATE pets SET pet_name = ?, species = ?, sex = ?, age = ?, spayed_neutered = ?, description = ?, picture = ?, adopted = ? WHERE pet_id = ?;";
         try {
-            int rowsAffected = jdbcTemplate.update(sql, pet.getPetName(), pet.getSpecies(), pet.getSex(), pet.getAge(), pet.getIsSpayedNeutered(), pet.getDescription(), pet.getPicture(), pet.getisAdopted());
+            int rowsAffected = jdbcTemplate.update(sql, pet.getPetName(), pet.getSpecies(), pet.getSex(), pet.getAge(), pet.getIsSpayedNeutered(), pet.getDescription(), pet.getPicture(), pet.getisAdopted(), pet.getPetId());
             if (rowsAffected == 0) {
                 throw new DaoException("Pet was not updated, expected at least one change");
             }

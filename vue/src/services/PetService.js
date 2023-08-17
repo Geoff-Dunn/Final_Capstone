@@ -23,7 +23,7 @@ export default {
   },
 
   updatePet(updatedpet) {
-    return axios.put('/',updatedpet);
+    return axios.put(`/`,updatedpet);
   },
 
   deletePet(petID) {

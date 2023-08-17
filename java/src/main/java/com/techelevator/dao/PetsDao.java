@@ -10,7 +10,7 @@ import java.util.List;
 public interface PetsDao {
     List <Pets> getAllPets();
 
-    Pets updatePets(int petId);
+    Pets updatePets(PetsDto pet);
 
     Pets createPets(PetsDto pets);
 
