@@ -3,18 +3,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <h3 class="title"  id="allpets">Pets for Adoption</h3>
 <div class="container">  
-  <div class="content" v-for="pet in filteredSpecies" :key="pet.id" > 
+  <div class="content" v-for="pets in filteredSpecies" :key="pets.id" > 
       <div class="content-overlay"></div>
-        <img class="content-image" v-bind:src= "pet.picture">
+        <img class="content-image" v-bind:src= "pets.picture">
       <div class="content-details fadeIn-bottom">
-        <p class="content-title">{{pet.petName}}</p>
-        <p class="content-text">{{pet.description}}</p>
-        <p class="content-text">{{pet.age}}</p>
-        <p class="content-text">{{pet.sex}}</p>
+        <p class="content-title">{{pets.petName}}</p>
+        <p class="content-text">{{pets.description}}</p>
+        <p class="content-text">{{pets.age}}</p>
+        <p class="content-text">{{pets.sex}}</p>
         <!-- <button v-on:click="updatePet()">Edit Pet</button> -->
-        <button v-on:click="deletePet(pet.petId)">Delete Pet</button>
-        
-
+      <div class="deletePet">
+  <button v-on:click="deletePet(pets.petId)">Delete Pet</button>
+</div>
       </div>
   </div>
 <div class="container">
@@ -132,7 +132,7 @@ export default {
       this.registrationErrorMsg = 'There were problems registering this user.';
     },
     showAdmin() {
-      if (this.$store.state.token !== "" && this.$store.state.user.authorities[0].name === 'ROLE_ADMIN' ||this.$store.state.user.authorities[0].name !== 'ROLE_volunteer'){
+      if (this.$store.state.token !== "" && this.$store.state.user.authorities[0].name === 'ROLE_ADMIN' || this.$store.state.user.authorities[0].name !== 'ROLE_volunteer'){
         return true
       }
     },
@@ -151,8 +151,7 @@ export default {
      .then(response => {
        if (response.status === 204) {
          alert("Pet successfully deleted");
-        //  this.$router.push(`/`)
-         this.$router.go(0);
+         location.reload()
        }
      })
      }
