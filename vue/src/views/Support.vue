@@ -174,8 +174,8 @@ p {
 .content {
   position: relative;
   width: 90%;
-  width: 250px;
-  height:250px;
+  width: 300px;
+  height:300px;
   /* margin: auto; */
   margin-top: 20px;
   margin-bottom: 20px;
@@ -205,7 +205,7 @@ p {
 
 .content-image{
   width: 100%;
-  height: 250px;
+  height: 300px;
 }
 
 .content-details {
@@ -256,7 +256,7 @@ p {
     text-decoration: none;
 }
 p.content-title{
-  font-size: 50px;
+  font-size: 40px;
   text-decoration: underline;
 }
 

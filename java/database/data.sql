@@ -16,7 +16,7 @@ INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, pic
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Leo', 'cat', 'male', '9 months', 'true', 'Alex enjoys hunting mice and neck scratchies.', '../img/cats/cat_6.png', 'false');
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Flower', 'cat', 'male', '1 year 5 months', 'true', 'Flower is incredibly sociable but had bad breath and is a bit gassy.', '../img/cats/cat_7.webp', 'false');
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Cliff', 'cat', 'male', '11 months', 'true', 'Cliff is always happy to see you and will meet you at the door every time you get home.', '../img/cats/cat_8.webp', 'true');
-INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Banbi', 'rabbit', 'male', '1 year 2 months', 'true', 'Bambi loves lap time and carrot time.', '../img/Bunny/Bunny_1.png', 'false');
+INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Thumper', 'rabbit', 'male', '1 year 2 months', 'true', 'Thumper loves lap time and carrot time.', '../img/Bunny/Bunny_1.png', 'false');
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Spot', 'rabbit', 'female', '8 months', 'true', 'Spot is a little shy but warms up quickly.', '../img/Bunny/Bunny_2.jpg', 'true');
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Esther', 'rabbit', 'female', '4 months', 'false', 'Esther will consume everything around her.', '../img/Bunny/Bunny_3.jpg', 'false');
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Ted', 'rabbit', 'male', '2 years', 'true', 'Ted sits. Most rabbits hop, but Ted just sits.', '../img/Bunny/Bunny_4.jpg', 'false');
@@ -25,8 +25,8 @@ INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, pic
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Trae', 'rabbit', 'male', '11 months', 'true', 'Trae will find all of your lost wristbands.', '../img/Bunny/Bunny_7.png', 'false');
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Butterscotch', 'rabbit', 'male', '2 years 1 month', 'true', 'Butterscotch is semi-sweet and will stick around you for a long time.', '../img/Bunny/Bunny_8.png', 'false');
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Peach', 'rabbit', 'female', '7 months', 'true', 'Peach is quicker than she looks but still makes a great snuggle companion.', '../img/Bunny/Bunny_9.png', 'false');
-INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Spike', 'dog', 'male', '8 months', 'true', 'Spike will guard you home with ruthless ferocity.', '../img/dogs/dog_1.jpg', 'false');
-INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Jimmy', 'dog', 'male', '6 months', 'true', 'Jimmy will just sit there, watching every single move you make.', '../img/dogs/dog_2.webp', 'false');
+INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Spike', 'dog', 'male', '8 months', 'true', 'Spike will guard your home with ruthless ferocity.', '../img/dogs/dog_1.jpg', 'false');
+INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Jimmy', 'dog', 'male', '6 months', 'true', 'Jimmy will just sit there, watching every single move you make. Like a psychopath.', '../img/dogs/dog_2.webp', 'false');
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Sarah', 'dog', 'female', '2 years 3 months', 'true', 'Sarah is a huge drama queen that will let you know every little inconvenience that occurs.', '../img/dogs/dog_3.jpg', 'false');
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Sam', 'dog', 'male', '11 months', 'true', 'Sam will just wait there until you finally realize how much you need him.', '../img/dogs/dog_4.jpg', 'false');
 INSERT INTO pets (pet_name, species, sex, age, spayed_neutered, description, picture, adopted) VALUES ('Sue', 'dog', 'female', '1 year', 'true', 'Sue worries about her wrinkles, please reassure her.', '../img/dogs/dog_5.webp', 'true');
@@ -38,9 +38,13 @@ COMMIT TRANSACTION;
 
 BEGIN TRANSACTION;
 INSERT INTO volunteersignup (name, age, phone_number, address, email, role, is_active)
-VALUES ('Dan', 29, '4405396774', '1234 Madeup Way', 'notmyemail@gmail.com', 'volunteer', 'true');
+VALUES ('Dan', 29, '4405396774', '1234 Madeup Way', 'notmyemail@gmail.com', 'volunteer', 'false');
 INSERT INTO volunteersignup (name, age, phone_number, address, email, role, is_active)
 VALUES ('Sam', 33, '4405306774', '456 Madeup Way', 'notemail@gmail.com', 'volunteer', 'true');
+INSERT INTO volunteersignup (name, age, phone_number, address, email, role, is_active)
+VALUES ('Lou', 17, '4405226454', '478 Madeup Way', 'notmymail@gmail.com', 'volunteer', 'false');
+INSERT INTO volunteersignup (name, age, phone_number, address, email, role, is_active)
+VALUES ('Ruth', 63, '4401136876', '987 Madeup Way', 'nothermail@gmail.com', 'volunteer', 'false');
 
 
 COMMIT TRANSACTION;
