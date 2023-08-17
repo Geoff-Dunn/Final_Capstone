@@ -14,6 +14,7 @@ public class Pets {
     private boolean isAdopted;
 
     public Pets(int petId, String petName, String species, String sex, String age, boolean isSpayedNeutered, String description, String picture, boolean isAdopted) {
+
         this.petId = petId;
         this.petName = petName;
         this.species = species;
@@ -95,9 +96,9 @@ public class Pets {
         return petId;
     }
 
-    public void setAdopted(boolean adopted) {
-        isAdopted = adopted;
-    }
+//    public void setAdopted(boolean adopted) {
+//        isAdopted = adopted;
+//    }
 
     public void setPetId(int petId) {
         this.petId = petId;
